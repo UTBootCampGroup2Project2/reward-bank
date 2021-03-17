@@ -1,0 +1,16 @@
+<h1 class="section-banner"><span>The Tech Blog</span></h1>
+<main>
+  <ol class="post-list">
+    {{#if posts.length}}
+    {{else}}
+      <section>
+        <h2>Sad panda is lonely. Hope someone posts soon...</h2>
+      </section>
+    {{/if}}
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post }}
+    </li>
+    {{/each}}
+  </ol>
+</main>
