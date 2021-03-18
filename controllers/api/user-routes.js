@@ -38,12 +38,38 @@ router.get('/:id', (req, res) => {
 
 //GET all children of a parent
 router.get('/child/:id', (req, res) => {
-  
+    User.findAll({
+        where: {
+            admin_id: req.params.id
+        }
+    })
+    .then(dbChildData => {
+        if (!dbChildData) {
+            res.status(404).json({ message: 'Sorry! No children were associated with this parent/teacher.'})
+            return
+        }
+        res.json(dbChildData)
+    })
+    .catch(err => {
+        console.log(err)
+        res.status(500).json(err)
+    }) 
 });
 
 
-// POST /api/users
+// CREATE New Admin User (Parent/Teacher)
 router.post('/', (req, res) => {
+    User.create({
+        name: req.body.name,
+        username: req.body.username,
+        password: req.body.password,
+        role: req.body.role
+    })
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => {
+        console.log(err)
+        res.status(500).json(err)
+    })
   
 });
 
