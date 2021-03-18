@@ -1,11 +1,11 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// create our Task model
-class Task extends Model {};
+// create our Task_History model
+class Task_History extends Model {};
 
-// create fields/columns for Task model
-Task.init(
+// create fields/columns for Task_History model
+Task_History.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -13,20 +13,15 @@ Task.init(
       primaryKey: true,
       autoIncrement: true
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    value: {
+    task_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-        min: 0
+      references: {
+        model: 'task',
+        key: 'id'
       }
     },
-    created_by_user_id: {
+    completed_by_user_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       references: {
         model: 'user',
         key: 'id'
@@ -35,18 +30,15 @@ Task.init(
     status: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: 'active'
-    },
-    expiration_date: {
-      type: DataTypes.DATE
+      defaultValue: 'pending'
     }
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'task'
+    modelName: 'task_history'
   }
 );
 
-module.exports = Task;
+module.exports = Task_History;
