@@ -38,6 +38,24 @@ User.init(
         // this means the password must be at least four characters long
         len: [4]
       }
+    },
+    role:{
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    balance:{
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        min: 0
+      }
+    },
+    admin_id:{
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
     }
   },
   {
