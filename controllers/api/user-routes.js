@@ -165,6 +165,7 @@ router.post('/login', (req, res) => {
   
 });
 
+//LOGOUT Route
 router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {
@@ -177,11 +178,5 @@ router.post('/logout', (req, res) => {
   
 });
 
-
-
-// DELETE /api/users/1
-router.delete('/:id', withAuth, (req, res) => {
-  
-});
 
 module.exports = router;
