@@ -1,32 +1,64 @@
 const { User } = require('../models');
 
-const PostData = [
+const UserData = [
   {
-    username: "Sufyan",
-    password: "password"
+    name: "admin1name",
+    username: "admin1",
+    password: "password",
+    role: "parent",
+    balance: null,
+    admin_id: null
   },
   {
-    username: 'Swanson',
-    password: "password"
+    name: "child1name",
+    username: "child1",
+    password: "password",
+    role: "child",
+    balance: 0,
+    admin_id: 1
   },
   {
-    username: 'Ayah',
-    password: "password"
+    name: "child2name",
+    username: "child2",
+    password: "password",
+    role: "child",
+    balance: 50,
+    admin_id: 1
   },
   {
-    username: 'Archer',
-    password: "password"
+    name: "admin2name",
+    username: "admin2",
+    password: "password",
+    role: "teacher",
+    balance: null,
+    admin_id: null
   },
   {
-    username: 'Stan',
-    password: "password"
+    name: "student1name",
+    username: "student1",
+    password: "password",
+    role: "student",
+    balance: 1,
+    admin_id: 4
   },
   {
-    username: 'Echo',
-    password: "password"
+    name: "student2name",
+    username: "student2",
+    password: "password",
+    role: "student",
+    balance: 9000,
+    admin_id: 4
+  },
+  {
+    name: "admin3name",
+    username: "admin3",
+    password: "password",
+    role: "teacher",
+    balance: null,
+    admin_id: null
   }
 ];
 
-const seedUsers = () => User.bulkCreate(PostData);
+const  seedUsers = () => User.bulkCreate(UserData, {individualHooks: true});
 
 module.exports = seedUsers;
