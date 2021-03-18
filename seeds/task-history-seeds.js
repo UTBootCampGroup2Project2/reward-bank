@@ -2,18 +2,18 @@ const { Task_History } = require('../models');
 
 const Task_HistoryData = [
   {
-    task_id: 0,
-    completed_by_user_id: 1,
+    task_id: 1,
+    completed_by_user_id: 2,
     status: 'pending'
-  },
-  {
-    task_id: 0,
-    completed_by_user_id: 1,
-    status: 'completed'
   },
   {
     task_id: 1,
     completed_by_user_id: 2,
+    status: 'completed'
+  },
+  {
+    task_id: 2,
+    completed_by_user_id: 3,
     status: 'completed'
   }
 ];

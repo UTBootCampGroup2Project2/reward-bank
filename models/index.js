@@ -5,9 +5,9 @@ const Reward = require("./Reward");
 const Reward_History = require("./Reward_History");
 // create associations
 
-User.belongsTo(User, {
-  foreignKey: 'admin_id'
-});
+// User.hasOne(User, {
+//   foreignKey: 'admin_id'
+// });
 
 Task.belongsTo(User, {
   foreignKey: 'created_by_user_id'

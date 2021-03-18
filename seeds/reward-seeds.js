@@ -4,19 +4,19 @@ const RewardData = [
   {
     name: "TV - 30min",
     cost: 20,
-    created_by_user_id: 0,
+    created_by_user_id: 1,
     status: 'active'
   },
   {
     name: "one fortnite skin",
     cost: 501,
-    created_by_user_id: 0,
+    created_by_user_id: 1,
     status: 'active'
   },
   {
     name: "iPad - 30min",
     cost: 20,
-    created_by_user_id: 0,
+    created_by_user_id: 1,
     status: 'inactive'
   }
 ];
