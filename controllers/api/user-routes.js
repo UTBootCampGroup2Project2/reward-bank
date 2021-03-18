@@ -4,7 +4,9 @@ const withAuth = require('../../utils/auth');
 
 // GET all users
 router.get('/', (req, res) => {
-    User.findAll()
+    User.findAll({
+        attributes: { exclude: ['password']}
+    })
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {
         console.log(err)
@@ -16,6 +18,7 @@ router.get('/', (req, res) => {
 // GET one user
 router.get('/:id', (req, res) => {
     User.findOne({
+        attributes: { exclude: ['password']},
         where: {
             id: req.params.id
         }
@@ -39,6 +42,7 @@ router.get('/:id', (req, res) => {
 //GET all children of a parent
 router.get('/child/:id', (req, res) => {
     User.findAll({
+        attributes: { exclude: ['password']},
         where: {
             admin_id: req.params.id
         }
