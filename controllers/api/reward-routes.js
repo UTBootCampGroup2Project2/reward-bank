@@ -41,10 +41,11 @@ router.post('/', (req, res) => {
   })
 });
 
+
+
 // PUT one: /api/rewards/1
 router.put('/:id', (req, res) => {
-  Reward.update({ where: { id: req.params.id } },
-  {
+  Reward.update({where: req.params.id}, {
     name: req.body.name,
     cost: req.body.cost,
     status: req.body.status,
