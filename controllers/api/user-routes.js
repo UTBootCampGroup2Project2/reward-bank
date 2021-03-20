@@ -40,11 +40,11 @@ router.get('/:id', (req, res) => {
 
 
 //GET all children of a parent
-router.get('/child/:id', (req, res) => {
+router.get('/child/:parentId', (req, res) => {
     User.findAll({
         attributes: { exclude: ['password']},
         where: {
-            admin_id: req.params.id
+            admin_id: req.params.parentId
         }
     })
     .then(dbChildData => {
@@ -78,14 +78,14 @@ router.post('/', (req, res) => {
 });
 
 //CREATE New Child User
-router.post('/:id', (req,res) => {
+router.post('/:parentId', (req,res) => {
     User.create({
         name: req.body.name,
         username: req.body.username,
         password: req.body.password,
         role: 'child',
         balance: req.body.balance,
-        admin_id: req.params.id
+        admin_id: req.params.parentId
     })
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {
