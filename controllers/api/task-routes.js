@@ -29,7 +29,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   Task.create({
     name: req.body.name,
-    value: req.body.cost,
+    value: req.body.value,
     status: req.body.status,
     created_by_user_id: req.body.created_by_user_id
   })
@@ -46,7 +46,7 @@ router.put('/:id', (req, res) => {
   Task.update({ where: { id: req.params.id } },
   {
     name: req.body.name,
-    value: req.body.cost,
+    value: req.body.value,
     status: req.body.status,
     created_by_user_id: req.body.created_by_user_id
   })
