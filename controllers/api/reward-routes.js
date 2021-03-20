@@ -41,16 +41,17 @@ router.post('/', (req, res) => {
   })
 });
 
-
-
 // PUT one: /api/rewards/1
 router.put('/:id', (req, res) => {
-  Reward.update({where: req.params.id}, {
+  Reward.update(
+    {
     name: req.body.name,
-    cost: req.body.cost,
+    cost: req.body.value,
     status: req.body.status,
     created_by_user_id: req.body.created_by_user_id
-  })
+    },
+    { where: { id: req.params.id }}
+  )
   .then(data => {
     res.json(data)
   })

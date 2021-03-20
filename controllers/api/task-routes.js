@@ -43,13 +43,15 @@ router.post('/', (req, res) => {
 
 // PUT one: /api/tasks/1
 router.put('/:id', (req, res) => {
-  Task.update({ where: { id: req.params.id } },
-  {
+  Task.update(
+    {
     name: req.body.name,
     value: req.body.value,
     status: req.body.status,
     created_by_user_id: req.body.created_by_user_id
-  })
+    },
+    { where: { id: req.params.id }}
+  )
   .then(data => {
     res.json(data)
   })
