@@ -8,6 +8,4 @@ router.use('/users', userRoutes);
 router.use('/task-history', taskHistoryRoutes);
 router.use('/reward-history', rewardHistoryRoutes);
 
-
-
 module.exports = router;
