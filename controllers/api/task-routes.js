@@ -1,28 +1,74 @@
 const router = require('express').Router();
+const { Task } = require("../../models");
 
-// GET /api/tasks
+// GET all: /api/tasks
 router.get('/', (req, res) => {
-
+  Task.findAll({ })
+  .then(data => {
+    res.json(data)
+  })
+  .catch(err => {
+    res.status(500).json(err)
+  })
 });
 
-// GET /api/task/1
+// GET one: /api/tasks/1
 router.get('/:id', (req, res) => {
-  
+  Task.findOne({ where:
+    { id: req.params.id }
+  })
+  .then(data => {
+    res.json(data)
+  })
+  .catch(err => {
+    res.status(500).json(err)
+  })
 });
 
 // POST /api/tasks
 router.post('/', (req, res) => {
-  
+  Task.create({
+    name: req.body.name,
+    value: req.body.cost,
+    status: req.body.status,
+    created_by_user_id: req.body.created_by_user_id
+  })
+  .then(data => {
+    res.json(data)
+  })
+  .catch(err => {
+    res.status(500).json(err)
+  })
 });
 
-// PUT /api/task/1
+// PUT one: /api/tasks/1
 router.put('/:id', (req, res) => {
-  
+  Task.update({ where: { id: req.params.id } },
+  {
+    name: req.body.name,
+    value: req.body.cost,
+    status: req.body.status,
+    created_by_user_id: req.body.created_by_user_id
+  })
+  .then(data => {
+    res.json(data)
+  })
+  .catch(err => {
+    res.status(500).json(err)
+  })
 });
 
-// DELETE /api/task/1
+// DELETE one: /api/tasks/1
 router.delete('/:id', (req, res) => {
-  
+  Task.destroy({ where:
+    { id: req.params.id }
+  })
+  .then(data => {
+    res.json(data)
+  })
+  .catch(err => {
+    res.status(500).json(err)
+  })
 });
 
 module.exports = router;
