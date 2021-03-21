@@ -61,7 +61,7 @@ router.put('/:rewardHistoryId', (req, res) => {
 })
 
 //delete task history
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', (req, res) => {
     Reward_History.destroy({
         where: {
             id: req.params.id

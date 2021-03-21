@@ -52,10 +52,14 @@ router.post('/:childId', (req, res) => {
 router.put('/:taskHistoryId', (req, res) => {
     Task_History.update({
         id: req.params.taskHistoryId,
-        task_id: req.body.task_id,
-        completed_by_user_id: req.body.completed_by_user_id,
-        status: req.body.status,
-    })
+        status: req.body.status
+    },
+    {
+        where: {
+            id: req.params.taskHistoryId
+        }
+    }
+    )
     .then(dbTaskHistoryData => res.json(dbTaskHistoryData))
     .catch(err => {
         console.log(err)
