@@ -78,7 +78,7 @@ router.post('/', (req, res) => {
 });
 
 //CREATE New Child User
-router.post('/:parentId', (req,res) => {
+router.post('/child/:parentId', (req,res) => {
     User.create({
         name: req.body.name,
         username: req.body.username,
