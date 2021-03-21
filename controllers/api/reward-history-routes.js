@@ -52,7 +52,13 @@ router.put('/:rewardHistoryId', (req, res) => {
         id: req.params.rewardHistoryId,
         reward_id: req.body.reward_id,
         purchased_by_user_id: req.body.purchased_by_user_id,
-    })
+    },
+    {
+        where: {
+            id: req.params.rewardHistoryId
+        }
+    }
+    )
     .then(dbRewardHistoryData => res.json(dbRewardHistoryData))
     .catch(err => {
         console.log(err)
