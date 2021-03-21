@@ -19,6 +19,7 @@ router.get('/:childID', (req, res) => {
 
     })
     .then(dbTaskHistoryData => {
+        console.log(dbTaskHistoryData)
         if (!dbTaskHistoryData) {
             res.status(404).json({ message: 'Sorry! No task history was found for this user.'})
             return
@@ -37,7 +38,7 @@ router.get('/:childID', (req, res) => {
 router.post('/:childId', (req, res) => {
     Task_History.create({
         task_id: req.body.task_id,
-        completed_by_user_id: req.body.completed_by_user_id,
+        completed_by_user_id: req.params.childId,
         status: 'pending',
     })
     .then(dbTaskHistoryData => res.json(dbTaskHistoryData))
@@ -52,7 +53,7 @@ router.put('/:taskHistoryId', (req, res) => {
     Task_History.update({
         id: req.params.taskHistoryId,
         task_id: req.body.task_id,
-        completed_by_user_id: req.params.childId,
+        completed_by_user_id: req.body.completed_by_user_id,
         status: req.body.status,
     })
     .then(dbTaskHistoryData => res.json(dbTaskHistoryData))
@@ -63,7 +64,7 @@ router.put('/:taskHistoryId', (req, res) => {
 })
 
 //delete task history
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', (req, res) => {
     Task_History.destroy({
         where: {
             id: req.params.id

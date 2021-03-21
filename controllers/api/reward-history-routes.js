@@ -8,7 +8,7 @@ router.get('/:childID', (req, res) => {
         attributes: ['id', 'reward_id', 'purchased_by_user_id'],
         order: [['created_at', 'DESC']],
         where: {
-            completed_by_user_id: req.params.childID
+            purchased_by_user_id: req.params.childID
         },
         include: [
             {
@@ -37,7 +37,7 @@ router.get('/:childID', (req, res) => {
 router.post('/:childId', (req, res) => {
     Reward_History.create({
         reward_id: req.body.reward_id,
-        completed_by_user_id: req.params.childId
+        purchased_by_user_id: req.params.childId
     })
     .then(dbRewardHistoryData => res.json(dbRewardHistoryData))
     .catch(err => {
@@ -51,7 +51,7 @@ router.put('/:rewardHistoryId', (req, res) => {
     Reward_History.update({
         id: req.params.rewardHistoryId,
         reward_id: req.body.reward_id,
-        completed_by_user_id: req.body.completed_by_user_id,
+        purchased_by_user_id: req.body.purchased_by_user_id,
     })
     .then(dbRewardHistoryData => res.json(dbRewardHistoryData))
     .catch(err => {
