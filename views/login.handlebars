@@ -1,22 +1,54 @@
-<h1 class="section-banner"><span>The Tech Blog</span></h1>
-<main>
-  <br>
-  <form class="login-form">
-    <div>
-      <label for="username-login">Username:</label>
-      <input type="text" id="username-login" />
-    </div>
-    <div>
-      <label for="password-login">Password:</label>
-      <input type="password" id="password-login" />
-    </div>
-    <div>
-      <button type="submit">Log In</button>
-    </div>
-    <div>
-      <a href="/signup">Sign up instead</a>
-    </div>
-  </form>
+<div class="signup-page" >
+  <div class="container" >
+    <div class="row">
+      <div class="col-sm-10 col-lg-6 offset-sm-1 offset-lg-3" >
+        <div class="form-bg">
+         <img src="images/reward-bank-signup.png" alt="logo" class="logo">
+          <h2>Ready to get started? Enter your login details below.</h2>
 
-  <script src="/javascript/login.js"></script>
-</main>
+          <form class="login-form">
+            <div class="form-group">
+              <label for="email-login">Email:</label>
+              <input type="text" id="email-login" class="form-control" />
+            </div>
+            <div class="form-group" >
+              <label for="password-login">Password:</label>
+              <input type="password" id="password-login" class="form-control"/>
+            </div>
+            <div class="form-group"> 
+              <button type="submit" class="signup-btn">Login</button>
+            </div>
+          </form>
+
+          <form class="signup-form">
+            <div class="form-group">
+              <label for="username-signup">Username:</label>
+              <input type="text" id="username-signup" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="email-signup">Email:</label>
+              <input type="text" id="email-signup" class="form-control"/>
+            </div>
+            <div class="form-group">
+              <label for="password-signup">Password:</label>
+              <input type="password" id="password-signup" class="form-control"/>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">I am a:</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+               <option>Parent</option>
+               <option>Child</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="signup-btn">Signup</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="/javascript/login.js"></script>
