@@ -60,10 +60,10 @@ The license for this project is MIT. For full details, refer to the [License.MD]
 ## Authors
 
 <!-- add authors and github links -->
-Andaleeb Farooq - [github link :octocat:](https://github.com/cerafinn) <br />
-Brandon Burton - [github link](https://github.com/Menkoi) <br />
-Brian Wang - [github link](https://github.com/BrianCKWang) <br />
-Hayley Vuylsteke - [github link](https://github.com/hayleyvuylsteke)
+Andaleeb Farooq - [:octocat:](https://github.com/cerafinn) <br />
+Brandon Burton - [:octocat:](https://github.com/Menkoi) <br />
+Brian Wang - [:octocat:](https://github.com/BrianCKWang) <br />
+Hayley Vuylsteke - [:octocat:](https://github.com/hayleyvuylsteke)
 
 <br />
 
