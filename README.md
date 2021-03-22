@@ -1,9 +1,10 @@
 # Reward Bank
 
 ## Description
-As the world begins to move more and more towards digital currency and away from physical, Reward Bank strives to teach children the importance of money management that mirrors how we as adults now interact with finance.
+As the world begins to move more and more towards digital currency and away from physical, Reward Bank strives to teach children the importance of money management that reflects how we now interact with money.
 
-
+<br />
+<br />
 
 Table of Contents |
 -------------------|
@@ -49,13 +50,13 @@ Repo Link: [Repo Link](https://github.com/UTBootCampGroup2Project2/reward-bank)
 ## Authors
 
 <!-- add authors and github links -->
-Andaleeb Farooq - [github link]() <br />
-Brandon Burton - [github link]() <br />
-Brian Wang - [github link]() <br />
-Hayley Vuylsteke - [github link]()
+Andaleeb Farooq - [github link](https://github.com/cerafinn) <br />
+Brandon Burton - [github link](https://github.com/Menkoi) <br />
+Brian Wang - [github link](https://github.com/BrianCKWang) <br />
+Hayley Vuylsteke - [github link](https://github.com/hayleyvuylsteke)
 
 <br />
 
 ## Questions
 
-If you have any questions or issues, feel free to reach out to us on the repo: [repo link](https://github.com/UTBootCampGroup2Project2).
+If you have any questions or issues, feel free to reach out to us either through the repo([repo link](https://github.com/UTBootCampGroup2Project2)) or through our respective github accounts listed above.
