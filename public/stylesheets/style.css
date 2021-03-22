@@ -616,51 +616,7 @@ span.option-br {
 
 /*  DASHBOARD */
 
-.homepage {
-  float: left;
-  width: 100%;
-  height: 100%;
-  background-color: #1966b0;
-  padding: 20px 10px 20px;
-}
 
-.homepage-form-bg {
-  background-color: #ffd158;
-  border: 1px solid #e5e5e5;
-  padding: 20px 10px 30px;
-  border-radius: 10px;
-  display: flex;
-}
-
-.homepage-logo {
-  width: 10%;
-  height: 10%;
-}
-
-.approve-list {
-    background-color: white;
-    border: 1px solid #e5e5e5;
-    padding: 20px 40px 30px;
-    border-radius: 10px;
-}
-
-.child-points {
-          background-color: white;
-    border: 5px solid orangered;
-    padding: 20px 40px 30px;
-    border-radius: 10px;
-}
-
-.task-list {
-    border: 1px solid #e5e5e5;
-    padding: 20px 40px 30px;
-    border-radius: 10px;
-    background-color: #1966b0;
-}
-
-.form {
-    border-radius: 5px;
-}
 
 .btn1 {
   background-color: #1966b0;

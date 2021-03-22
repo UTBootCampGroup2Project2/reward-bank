@@ -8,13 +8,7 @@
             <div id="content">
 
                 <!-- TOPBAR -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-
+                <nav class="navbar navbar-expand navbar-light bg-warning topbar static-top shadow">
                     <!-- Topbar Search -->
                     <form>
                        <h3>Welcome NAME</h3>
@@ -23,10 +17,10 @@
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
                       <div class="header-btns align-self-end">
-                        <a class="settings-btn  btn-danger" href="/settings" role="button">Settings</a>
+                        <a class=" btn action-2 btn-danger" href="/settings" role="button">Settings</a>
                         
                         {{#if loggedIn}}
-                        <button id="logout" class=" btn-danger">logout</button>
+                        <button id="logout" class="btn action-2 btn-danger">logout</button>
                         {{else}}
                         <a href="/login">login</a>
                         {{/if}}
@@ -37,7 +31,7 @@
                 <!-- END OF TOPBAR -->
 
                 <!-- PAGE CONTENT -->
-                <div class="container-fluid">
+                <div class="container-fluid bg-info">
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
@@ -53,7 +47,7 @@
                                       <div class="h5 mb-0 font-weight-bold text-gray-800">500</div>
                                   </div>
                                   <div class="col-auto">
-                                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                      <i class="f-50 fas fa-wallet fa-2x text-gray-300"></i>
                                   </div>
                               </div>
                           </div>
@@ -62,17 +56,10 @@
 
                     <!-- Dropdown Card Example -->
                     <div class="card shadow mb-4">
-                      <!-- Card Header - Dropdown -->
+                      <!-- Card Header -->
                       <div
                           class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                           <h6 class="m-0 font-weight-bold text-primary">Your Task Approval List</h6>
-                          <div class="dropdown no-arrow">
-                              <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                              </a>
-                              
-                          </div>
                       </div>
                       <!-- Card Body -->
                       <div class="card-body">
@@ -112,25 +99,15 @@
                         </div> 
                       </div> 
                     </div>
-                  </div>
-                 </div>
-
-                  <!-- Dropdown Card Example -->
-                  <div class="card shadow mb-4">
-                    <!-- Card Header - Dropdown -->
-                    <div
-                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">Your Reward Approval List</h6>
-                        <div class="dropdown no-arrow">
-                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                            </a>
-                          
-                        </div>
-                    </div>
-                    <!-- Card Body -->
-                    <div class="card-body">
+                     <!-- Dropdown Card Example -->
+                    <div class="card shadow mb-4">
+                      <!-- Card Header -->
+                      <div
+                          class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                          <h6 class="m-0 font-weight-bold text-primary">Your Reward Approval List</h6>
+                      </div>
+                      <!-- Card Body -->
+                      <div class="card-body">
                           Dropdown menus can be placed in the card header in order to extend the functionality
                           of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis
                           icon in the card header can be clicked on in order to toggle a dropdown menu.
@@ -165,10 +142,9 @@
                             </tbody>
                           </table>
                         </div> 
-                      </div>
+                      </div> 
+                    </div>
                 </div>
-                <!-- /.container-fluid -->
-
             </div>
             <!-- END OF MAIN CONTENT -->
 
