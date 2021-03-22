@@ -10,7 +10,7 @@ Table of Contents |
 [Installation](#Installation)
 [Usage](#Usage)
 [Contributing](#Contributing)
-[Tests](#Tests)
+[Authors](#Authors)
 [Questions](#Questions)
 
 <br />
@@ -54,5 +54,4 @@ Repo Link: [Repo Link](https://github.com/UTBootCampGroup2Project2/reward-bank)
 
 ## Questions
 
-If you have any questions or issues, feel free to reach out through andaleeb.farooq@gmail.com.
-You can also find more of my work on Github at [github link](https://github.com/UTBootCampGroup2Project2)
+If you have any questions or issues, feel free to reach out to us on the repo: [repo link](https://github.com/UTBootCampGroup2Project2).
