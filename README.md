@@ -30,6 +30,8 @@ In order to run the project locally for development and testing, ensure that dep
 
 ## Usage
 
+The aim of Reward Bank, as stated above, is to have a starting point for children to learn how to handle money within the now more increasing digital world.
+
 <!-- more detailed description of the application -->
 
 You can find the deployed link and the repository link below:
@@ -45,7 +47,7 @@ Repo Link: [Repo Link](https://github.com/UTBootCampGroup2Project2/reward-bank)
 
 ##  License
 
-The license for this project is MIT. For full details, refer to the license file within the repository.
+The license for this project is MIT. For full details, refer to the [License.MD](LICENSE) file within the repository.
 
 <br />
 
@@ -58,7 +60,7 @@ The license for this project is MIT. For full details, refer to the license file
 ## Authors
 
 <!-- add authors and github links -->
-Andaleeb Farooq - [github link](https://github.com/cerafinn) <br />
+Andaleeb Farooq - [github link :octocat:](https://github.com/cerafinn) <br />
 Brandon Burton - [github link](https://github.com/Menkoi) <br />
 Brian Wang - [github link](https://github.com/BrianCKWang) <br />
 Hayley Vuylsteke - [github link](https://github.com/hayleyvuylsteke)
