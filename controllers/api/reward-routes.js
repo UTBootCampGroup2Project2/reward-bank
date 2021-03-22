@@ -45,10 +45,10 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
   Reward.update(
     {
-    name: req.body.name,
-    cost: req.body.value,
-    status: req.body.status,
-    created_by_user_id: req.body.created_by_user_id
+      name: req.body.name,
+      cost: req.body.value,
+      status: req.body.status,
+      created_by_user_id: req.body.created_by_user_id
     },
     { where: { id: req.params.id }}
   )
