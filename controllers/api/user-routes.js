@@ -78,7 +78,7 @@ router.post('/', (req, res) => {
 });
 
 //CREATE New Child User
-router.post('/:parentId', (req,res) => {
+router.post('/child/:parentId', (req,res) => {
     User.create({
         name: req.body.name,
         username: req.body.username,
@@ -95,7 +95,7 @@ router.post('/:parentId', (req,res) => {
 });
 
 //EDIT a user
-router.put('/:id', withAuth, (req, res) => {
+router.put('/:id', (req, res) => {
     User.update(req.body, {
         where: {
             id: req.params.id
@@ -115,7 +115,7 @@ router.put('/:id', withAuth, (req, res) => {
 });
 
 // DELETE a user
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', (req, res) => {
   User.destroy({
       where: {
           id: req.params.id
