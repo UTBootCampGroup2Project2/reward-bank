@@ -1,198 +1,164 @@
-    <div class="homepage">
-        <div class="row">
-            <div class="col-sm-6 col-lg-12">
-                <div class="homepage-form-bg d-flex flex-column">
-                     <img src="images/reward-bank-logo.png" alt="logo" class="homepage-logo">
-                     <div class="header-btns align-self-end">
-                      <!-- <a class="btn btn-danger" href="#" role="button">Dashboard</a> -->
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- TOPBAR -->
+                <nav class="navbar navbar-expand navbar-light bg-warning topbar static-top shadow">
+                    <!-- Topbar Search -->
+                    <form>
+                       <h3 id="header-name">Welcome NAME </h3>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                      <div class="header-btns align-self-end">
                         {{#if loggedIn}}
-                        <button id="logout" class="btn btn-danger">logout</button>
+                        <button id="logout" class="btn action-2 btn-danger">logout</button>
                         {{else}}
                         <a href="/login">login</a>
                         {{/if}}
                      </div>
-                        <div class="flex-column">
-                           <div class="col-lg-6 col-lg-12 offset-sm-4 offset-lg-0 " >
-                               <div class="approve-list">
-                                   <h2>Hi NAME</h2>
-                                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Ut beatae perferendis repellat asperiores corporis odio voluptates, 
-                                        sequi odit libero inventore quidem error maxime, animi, doloribus sunt. 
-                                        In magni hic numquam.
-                                   </p>
-                                <div class="d-flex p-4">
-                                    <div class="col-md-4 flex-row">
-                                        <div class="child-points">
-                                            <p>Your current point balance is</p>
-                                            <h3>600 Points</h3>
+                    </ul>
+
+                </nav>
+                <!-- END OF TOPBAR -->
+
+                <!-- PAGE CONTENT -->
+                <div class="container-fluid bg-info">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-4 text-gray-800">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h1>
+
+                    <!-- Current Child Points Card -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                      <div class="card border-left-primary shadow h-100 py-2">
+                          <div class="card-body">
+                              <div class="row no-gutters align-items-center">
+                                  <div class="col mr-2">
+                                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Your Current Point Balance is
+                                        <p>600</p>
                                         </div>
-                                    </div>
-                                </div>
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class=" col-md-6">
-                                                <div class="task-list d-flex flex-column bg-warning ">
-                                                    <h3>Your To-do List</h3>
-                                                    <!--<div class="row"> -->
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Complete</button>
-                                                                <div class="task-list-box d-flex  w-100 p-2 bg-white ">Task Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
-                                                            </div> 
-                                                        </div>
-
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Complete</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Complete</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Complete</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Complete</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Completed</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
-                                                            </div> 
-                                                        </div>
-
-                                                        <h3>Your Completed Tasks</h3>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <div class="task-list-box d-flex  w-100 p-2 bg-white ">Task Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <div class="task-list-box d-flex  w-100 p-2 bg-white ">Task Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <div class="task-list-box d-flex  w-100 p-2 bg-white ">Task Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <div class="task-list-box d-flex  w-100 p-2 bg-white ">Task Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
-                                                            </div> 
-                                                        </div>
-
-                                                    <!--</div> -->
-                                                </div>
-                                            </div>
-                                            <div class=" col-md-6">
-                                                <div class="task-list d-flex flex-column">
-                                                    <h3>Your Reward List:</h3>
-                                                    <!--<div class="row"> -->
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Request</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Request</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Request</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Request</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Request</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Request</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <h3>Your Recived Rewards</h3>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <div class="task-list-box d-flex  w-100 p-2 bg-white ">Reward Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <div class="task-list-box d-flex  w-100 p-2 bg-white ">Reward Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <div class="task-list-box d-flex  w-100 p-2 bg-white ">Reward Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <div class="task-list-box d-flex  w-100 p-2 bg-white ">Reward Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        
-                                                        
-
-                                                    <!--</div> -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                               </div>
-                           </div>
-                        </div>
-                     </div>  
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                    <!-- Dropdown Card  -->
+                    <div class="card shadow mb-4">
+                      <!-- Card Header -->
+                      <div
+                          class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                          <h6 class="m-0 font-weight-bold text-primary">Your To-Do List</h6>
+                      </div>
+                      <!-- Card Body -->
+                      <div class="card-body">
+                          Dropdown menus can be placed in the card header in order to extend the functionality
+                          of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis
+                          icon in the card header can be clicked on in order to toggle a dropdown menu.
+                        <div class="table-responsive">
+                          <table class="table">  
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Child 1</th>
+                                    <td>Completed</td>
+                                    <td>Task Name</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Child 2</th>
+                                    <td>Completed</td>
+                                    <td>Task Name</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Child 3</th>
+                                    <td>Completed</td>
+                                    <td>Task Name</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Child 4</th>
+                                    <td>Completed</td>
+                                    <td>Task Name</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Child 5</th>
+                                    <td>Completed</td>
+                                    <td>Task Name</td>
+                                </tr>
+                            </tbody>
+                          </table>
+                        </div> 
+                      </div> 
+                    </div>
+                     <!-- Dropdown Card Example -->
+                    <div class="card shadow mb-4">
+                      <!-- Card Header -->
+                      <div
+                          class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                          <h6 class="m-0 font-weight-bold text-primary">Your Reward List</h6>
+                      </div>
+                      <!-- Card Body -->
+                      <div class="card-body">
+                          Dropdown menus can be placed in the card header in order to extend the functionality
+                          of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis
+                          icon in the card header can be clicked on in order to toggle a dropdown menu.
+                        <div class="table-responsive">
+                          <table class="table">  
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Child 1</th>
+                                    <td>Requested</td>
+                                    <td>Task Name</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Child 2</th>
+                                    <td>Requested</td>
+                                    <td>Task Name</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Child 3</th>
+                                    <td>Requested</td>
+                                    <td>Task Name</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Child 4</th>
+                                    <td>Requested</td>
+                                    <td>Task Name</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Child 5</th>
+                                    <td>Requested</td>
+                                    <td>Task Name</td>
+                                </tr>
+                            </tbody>
+                          </table>
+                        </div> 
+                      </div> 
+                    </div>
                 </div>
-              </div>
-                
             </div>
+            <!-- END OF MAIN CONTENT -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Reward Bank 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
         </div>
+        <!-- End of Content Wrapper -->
+
     </div>
+    <!-- End of Page Wrapper -->
+
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
