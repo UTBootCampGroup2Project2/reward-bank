@@ -1,135 +1,152 @@
-<div class="homepage">
-    <div class="row">
-        <div class="col-sm-6 col-lg-12">
-            <div class="homepage-form-bg d-flex flex-column">
-                 <img src="images/reward-bank-logo.png" alt="logo" class="homepage-logo">
-                 <div class="header-btns align-self-end">
-                    <a class="settings-btn btn btn-danger" href="/settings" role="button">Settings</a>
-                    
-                    {{#if loggedIn}}
-                    <button id="logout" class="btn btn-danger">logout</button>
-                    {{else}}
-                    <a href="/login">login</a>
-                    {{/if}}
-                 </div>
-                    <div class="flex-column">
-                       <div class="col-lg-6 col-lg-12 offset-sm-4 offset-lg-0 " >
-                           <div class="approve-list">
-                               <h2>Welcome NAME</h2>
-                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Ut beatae perferendis repellat asperiores corporis odio voluptates, 
-                                    sequi odit libero inventore quidem error maxime, animi, doloribus sunt. 
-                                    In magni hic numquam.
-                               </p>
-                               <div class="d-flex p-4">
-                                   <div class="col-md-4 flex-row">
-                                       <div class="child-points">
-                                           <p>Your Children's Current Points Balance:</p>
-                                           <p>test</p>
+    <div class="homepage">
+        <div class="row">
+            <div class="col-sm-6 col-lg-12">
+                <div class="homepage-form-bg d-flex flex-column">
+                     <img src="images/reward-bank-logo.png" alt="logo" class="homepage-logo">
+                     <div class="header-btns align-self-end">
+                        <a class="settings-btn btn btn-danger" href="/settings" role="button">Settings</a>
+                        
+                        {{#if loggedIn}}
+                        <button id="logout" class="btn btn-danger">logout</button>
+                        {{else}}
+                        <a href="/login">login</a>
+                        {{/if}}
+                     </div>
+                        <div class="flex-column">
+                           <div class="col-lg-6 col-lg-12 offset-sm-4 offset-lg-0 " >
+                               <div class="approve-list">
+                                   <h2>Welcome {{ post.user.username}} </h2>
+                                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Ut beatae perferendis repellat asperiores corporis odio voluptates, 
+                                        sequi odit libero inventore quidem error maxime, animi, doloribus sunt. 
+                                        In magni hic numquam.
+                                   </p>
+                                   <div class="d-flex p-4">
+                                       <div class="col-md-4 flex-row">
+                                           <div class="child-points">
+                                               <p>Your Children's Current Points Balance:</p>
+                                               <p> {{post.reward.status}} </p>
+                                           </div>
                                        </div>
                                    </div>
-                               </div>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class=" col-md-6">
-                                            <div class="task-list d-flex flex-column bg-warning">
-                                                <h2>Your Task Approval List:</h2>
-                                                <div class="row">
-                                                    <div class="input-group mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <button class="btn1 btn-outline-secondary" type="button">Button</button>
-                                                        </div>
-                                                        <input type="text" class="form-control">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class=" col-md-6">
+                                                <div class="task-list d-flex flex-column bg-warning">
+                                                    <h2>Your Task Approval List:</h2>
+                                                 <!---   <div class="row"> -->
+                                                    <div class=" mb-3">
+                                                        <div class="input-group-prepend ">
+                                                            <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
+                                                            <div class="task-list-box d-flex  w-100 p-2 bg-white ">{{ post.task.name }}</div>
+                                                            <div class="task-list-box d-flex w-100 p-2 bg-white">{{ post.task.value }}</div>
+                                                        </div> 
                                                     </div>
-                                                    <div class="input-group mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <button class="btn1 btn-outline-secondary" type="button">Button</button>
-                                                        </div>
-                                                        <input type="text" class="form-control">
+
+                                                    <div class=" mb-3">
+                                                        <div class="input-group-prepend ">
+                                                            <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
+                                                            <div class="task-list-box d-flex  w-100 p-2 bg-white ">Task Name</div>
+                                                            <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
+                                                        </div> 
                                                     </div>
-                                                    <div class="input-group mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <button class="btn1 btn-outline-secondary" type="button">Button</button>
-                                                        </div>
-                                                        <input type="text" class="form-control">
+                                                    <div class=" mb-3">
+                                                        <div class="input-group-prepend ">
+                                                            <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
+                                                            <div class="task-list-box d-flex  w-100 p-2 bg-white ">Task Name</div>
+                                                            <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
+                                                        </div> 
                                                     </div>
-                                                    <div class="input-group mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <button class="btn1 btn-outline-secondary" type="button">Button</button>
-                                                        </div>
-                                                        <input type="text" class="form-control">
+                                                    <div class=" mb-3">
+                                                        <div class="input-group-prepend ">
+                                                            <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
+                                                            <div class="task-list-box d-flex  w-100 p-2 bg-white ">Task Name</div>
+                                                            <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
+                                                        </div> 
                                                     </div>
-                                                    <div class="input-group mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <button class="btn1 btn-outline-secondary" type="button">Button</button>
-                                                        </div>
-                                                        <input type="text" class="form-control">
+                                                    <div class=" mb-3">
+                                                        <div class="input-group-prepend ">
+                                                            <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
+                                                            <div class="task-list-box d-flex  w-100 p-2 bg-white ">Task Name</div>
+                                                            <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
+                                                        </div> 
                                                     </div>
-                                                    <div class="input-group mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <button class="btn1 btn-outline-secondary" type="button">Button</button>
-                                                        </div>
-                                                        <input type="text" class="form-control">
+                                                    <div class=" mb-3">
+                                                        <div class="input-group-prepend ">
+                                                            <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
+                                                            <div class="task-list-box d-flex  w-100 p-2 bg-white ">Task Name</div>
+                                                            <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
+                                                        </div> 
                                                     </div>
+                                                    <!--</div> -->
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class=" col-md-6">
-                                            <div class="task-list d-flex flex-column">
-                                                <h2>Your Reward Approval List:</h2>
-                                                <div class="row">
-                                                    <div class="input-group mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <button class="btn2 btn-outline-secondary bg-warning" type="button">Button</button>
+                                            <div class=" col-md-6">
+                                                <div class="task-list d-flex flex-column">
+                                                    <h2>Your Reward Approval List:</h2>
+                                                    <!--<div class="row"> -->
+                                                        <div class=" mb-3">
+                                                            <div class="input-group-prepend ">
+                                                                <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
+                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
+                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
+                                                            </div> 
                                                         </div>
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                    <div class="input-group mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <button class="btn2 btn-outline-secondary bg-warning" type="button">Button</button>
+                                                        <div class=" mb-3">
+                                                            <div class="input-group-prepend ">
+                                                                <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
+                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
+                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
+                                                            </div> 
                                                         </div>
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                    <div class="input-group mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <button class="btn2 btn-outline-secondary bg-warning" type="button">Button</button>
+                                                        <div class=" mb-3">
+                                                            <div class="input-group-prepend ">
+                                                                <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
+                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
+                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
+                                                            </div> 
                                                         </div>
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                    <div class="input-group mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <button class="btn2 btn-outline-secondary bg-warning" type="button">Button</button>
+                                                        <div class=" mb-3">
+                                                            <div class="input-group-prepend ">
+                                                                <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
+                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
+                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
+                                                            </div> 
                                                         </div>
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                    <div class="input-group mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <button class="btn2 btn-outline-secondary bg-warning" type="button">Button</button>
+                                                        <div class=" mb-3">
+                                                            <div class="input-group-prepend ">
+                                                                <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
+                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
+                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
+                                                            </div> 
                                                         </div>
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                    <div class="input-group mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <button class="btn2 btn-outline-secondary bg-warning" type="button">Button</button>
+                                                        <div class=" mb-3">
+                                                            <div class="input-group-prepend ">
+                                                                <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
+                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
+                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
+                                                            </div> 
                                                         </div>
-                                                        <input type="text" class="form-control">
-                                                    </div>
+                                                    <!--</div> -->
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                               </div>
                            </div>
-                       </div>
-                    </div>
-                 </div>  
+                        </div>
+                     </div>  
+                </div>
+              </div>
+                
             </div>
-          </div>
-            
         </div>
     </div>
-</div>
+    
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
 
-{{#if loggedIn}}
-<script src="/javascript/logout.js"></script>
-{{/if}}
+    <script src="/javascript/user-routes.js"></script>
+    <script src="/javascript/task-routes.js"></script>
+    <script src="/javascript/reward-routes.js"></script>

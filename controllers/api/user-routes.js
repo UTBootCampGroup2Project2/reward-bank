@@ -40,11 +40,11 @@ router.get('/:id', (req, res) => {
 
 
 //GET all children of a parent
-router.get('/child/:id', (req, res) => {
+router.get('/child/:parentId', (req, res) => {
     User.findAll({
         attributes: { exclude: ['password']},
         where: {
-            admin_id: req.params.id
+            admin_id: req.params.parentId
         }
     })
     .then(dbChildData => {
@@ -78,14 +78,14 @@ router.post('/', (req, res) => {
 });
 
 //CREATE New Child User
-router.post('/:id', (req,res) => {
+router.post('/child/:parentId', (req,res) => {
     User.create({
         name: req.body.name,
         username: req.body.username,
         password: req.body.password,
         role: 'child',
         balance: req.body.balance,
-        admin_id: req.params.id
+        admin_id: req.params.parentId
     })
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {
@@ -95,7 +95,7 @@ router.post('/:id', (req,res) => {
 });
 
 //EDIT a user
-router.put('/:id', withAuth, (req, res) => {
+router.put('/:id', (req, res) => {
     User.update(req.body, {
         where: {
             id: req.params.id
@@ -115,7 +115,7 @@ router.put('/:id', withAuth, (req, res) => {
 });
 
 // DELETE a user
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', (req, res) => {
   User.destroy({
       where: {
           id: req.params.id

@@ -34,6 +34,7 @@ Reward.init(
     status: {
       type: DataTypes.STRING,
       allowNull: false
+      // create a Default: 'Pending'
     }
   },
   {
