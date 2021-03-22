@@ -1,35 +1,32 @@
-async function newFormHandler(event) {
+async function loginFormHandler(event) {
   event.preventDefault();
 
-  const username = document.querySelector('input').value;
+  const username = document.querySelector('#header-name').value;
 
-  const id = window.location.toString().split('/')[
-    window.location.toString().split('/').length - 1
-  ];
-  
+  if (username && id) {
+    const response = await fetch('/api/users/', {
+      method: 'GET',
+      body: JSON.stringify({
+        username,
+        id,
+      }),
+      headers: { 'Content-Type': 'application/json' }
+    });
 
-  const response = await fetch(`/api/users/${id}`, {
-    method: 'GET',
-    body: JSON.stringify({
-      username,
-    }),
-    headers: {
-      'Content-Type': 'application/json'
+    if (response.ok) {
+      document.location.replace('/dashboard/')
+    } else {
+      console.log(response);
+      alert(response.statusText);
     }
-  });
-
-  if (response.ok) {
-    document.location.replace('/dashboard');
-  } else {
-    alert(response.statusText);
   }
 }
 
-async function createFormHandler(event) {
-  event.preventDefault();
+//async function createFormHandler(event) {
+//  event.preventDefault();
 
-  document.querySelector('.approve-list').style.display = "";
+//  document.querySelector('.approve-list').style.display = "";
  // document.querySelector('.new-post-section').style.display = "unset";
-}
+// /}
 // document.querySelector('.create-post-btn').addEventListener('click', createFormHandler);
 // document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);

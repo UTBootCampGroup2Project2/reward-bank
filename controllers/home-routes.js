@@ -17,8 +17,10 @@ router.get('/login', (req, res) => {
       res.render('login');
 });
 
-router.get('/signup', (req, res) => {
-  
+router.get('/settings', (req, res) => {
+  res.render('settings', {
+    loggedIn: req.session.loggedIn
+    });
 });
 
 router.get('/post/:id', (req, res) => {

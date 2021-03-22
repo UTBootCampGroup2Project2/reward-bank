@@ -1,142 +1,155 @@
- <div class="homepage">
-        <div class="row">
-            <div class="col-sm-6 col-lg-12">
-                <div class="homepage-form-bg d-flex flex-column">
-                     <img src="images/reward-bank-logo.png" alt="logo" class="homepage-logo">
-                     <div class="header-btns align-self-end">
-                        <a class="btn btn-danger" href="#" role="button">Dashboard</a>
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- TOPBAR -->
+                <nav class="navbar navbar-expand navbar-light bg-warning topbar static-top shadow">
+                    <!-- Topbar Search -->
+                    <form>
+                       <h3>Welcome NAME</h3>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                      <div class="header-btns align-self-end">
+                        <a class=" btn action-2 btn-danger" href="/dashboard" role="button">Dashboard</a>
+                        
                         {{#if loggedIn}}
-                        <button id="logout" class="btn btn-danger">logout</button>
+                        <button id="logout" class="btn action-2 btn-danger">logout</button>
                         {{else}}
                         <a href="/login">login</a>
                         {{/if}}
                      </div>
-                        <div class="flex-column">
-                           <div class="col-lg-6 col-lg-12 offset-sm-4 offset-lg-0 " >
-                               <div class="approve-list">
-                                   <h2>Settings</h2>
-                                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Ut beatae perferendis repellat asperiores corporis odio voluptates, 
-                                        sequi odit libero inventore quidem error maxime, animi, doloribus sunt. 
-                                        In magni hic numquam.
-                                   </p>
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class=" col-md-6">
-                                                <div class="task-list d-flex flex-column bg-warning ">
-                                                    <h2>Your Task List</h2>
-                                                    <!--<div class="row"> -->
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Delete</button>
-                                                                <div class="task-list-box d-flex  w-100 p-2 bg-white ">Task Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
-                                                            </div> 
-                                                        </div>
+                    </ul>
 
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Delete</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Delete</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Delete</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Delete</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Delete</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div>
-                                                            <button type="button" class="btn btn-danger btn-lg btn-block justify-content-end">Add a new Task</button>
-                                                        </div>
-                                                    <!--</div> -->
-                                                </div>
-                                            </div>
-                                            <div class=" col-md-6">
-                                                <div class="task-list d-flex flex-column">
-                                                    <h2>Your Reward Approval List:</h2>
-                                                    <!--<div class="row"> -->
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Delete</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Delete</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Delete</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Delete</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Delete</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Delete</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div>
-                                                            <button type="button" class="btn btn-danger btn-lg btn-block justify-content-end">Add a new Reward</button>
-                                                        </div>
-                                                    <!--</div> -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                               </div>
-                           </div>
-                        </div>
-                     </div>  
+                </nav>
+                <!-- END OF TOPBAR -->
+
+                <!-- PAGE CONTENT -->
+                <div class="container-fluid bg-info">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-4 text-gray-800">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h1>
+
+                    
+
+                    <!-- Dropdown Card Example -->
+                    <div class="card shadow mb-4">
+                      <!-- Card Header -->
+                      <div
+                          class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                          <h6 class="m-0 font-weight-bold text-primary">Your Task List</h6>
+                      </div>
+                      <!-- Card Body -->
+                      <div class="card-body">
+                          Dropdown menus can be placed in the card header in order to extend the functionality
+                          of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis
+                          icon in the card header can be clicked on in order to toggle a dropdown menu.
+                        <div class="table-responsive">
+                          <table class="table">  
+                            <tbody>
+                                <tr>
+                                    <th scope="row" class="btn1" type="button">Delete</th>
+                                    <td>Task Name</td>
+                                    <td>Task Value</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="btn1" type="button">Delete</th>
+                                    <td>Task Name</td>
+                                    <td>Task Value</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="btn1" type="button">Delete</th>
+                                    <td>Task Name</td>
+                                    <td>Task Value</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="btn1" type="button">Delete</th>
+                                    <td>Task Name</td>
+                                    <td>Task Value</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="btn1" type="button">Delete</th>
+                                    <td>Task Name</td>
+                                    <td>Task Value</td>
+                                </tr>
+                            </tbody>
+                          </table>
+                          <button type="button" class="btn bg-info action-1 btn-block">Add New task</button>
+                        </div> 
+                      </div> 
+                    </div>
+                     <!-- Dropdown Card Example -->
+                    <div class="card shadow mb-4">
+                      <!-- Card Header -->
+                      <div
+                          class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                          <h6 class="m-0 font-weight-bold text-primary">Your Reward List</h6>
+                      </div>
+                      <!-- Card Body -->
+                      <div class="card-body">
+                          Dropdown menus can be placed in the card header in order to extend the functionality
+                          of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis
+                          icon in the card header can be clicked on in order to toggle a dropdown menu.
+                        <div class="table-responsive">
+                          <table class="table">  
+                            <tbody>
+                                <tr>
+                                    <th scope="row" class="btn1" type="button">Delete</th>
+                                    <td>Reward Name</td>
+                                    <td>Reward Value</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="btn1" type="button">Delete</th>
+                                    <td>Reward Name</td>
+                                    <td>Reward Value</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="btn1" type="button">Delete</th>
+                                    <td>Reward Name</td>
+                                    <td>Reward Value</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="btn1" type="button">Delete</th>
+                                    <td>Reward Name</td>
+                                    <td>Reward Value</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="btn1" type="button">Delete</th>
+                                    <td>Reward Name</td>
+                                    <td>Reward Value</td>
+                                </tr>
+                            </tbody>
+                          </table>
+                          <button type="button" class="btn bg-info action-1 btn-block">Add New Reward</button>
+                        </div> 
+                      </div> 
+                    </div>
                 </div>
-              </div>
-                
             </div>
-        </div>
+            <!-- END OF MAIN CONTENT -->
 
-        
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Reward Bank 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
