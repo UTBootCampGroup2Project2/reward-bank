@@ -1,152 +1,193 @@
-    <div class="homepage">
-        <div class="row">
-            <div class="col-sm-6 col-lg-12">
-                <div class="homepage-form-bg d-flex flex-column">
-                     <img src="images/reward-bank-logo.png" alt="logo" class="homepage-logo">
-                     <div class="header-btns align-self-end">
-                        <a class="settings-btn btn btn-danger" href="/settings" role="button">Settings</a>
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- TOPBAR -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form>
+                       <h3>Welcome NAME</h3>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                      <div class="header-btns align-self-end">
+                        <a class="settings-btn  btn-danger" href="/settings" role="button">Settings</a>
                         
                         {{#if loggedIn}}
-                        <button id="logout" class="btn btn-danger">logout</button>
+                        <button id="logout" class=" btn-danger">logout</button>
                         {{else}}
                         <a href="/login">login</a>
                         {{/if}}
                      </div>
-                        <div class="flex-column">
-                           <div class="col-lg-6 col-lg-12 offset-sm-4 offset-lg-0 " >
-                               <div class="approve-list">
-                                   <h2>Welcome {{ post.user.username}} </h2>
-                                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Ut beatae perferendis repellat asperiores corporis odio voluptates, 
-                                        sequi odit libero inventore quidem error maxime, animi, doloribus sunt. 
-                                        In magni hic numquam.
-                                   </p>
-                                   <div class="d-flex p-4">
-                                       <div class="col-md-4 flex-row">
-                                           <div class="child-points">
-                                               <p>Your Children's Current Points Balance:</p>
-                                               <p> {{post.reward.status}} </p>
-                                           </div>
-                                       </div>
-                                   </div>
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class=" col-md-6">
-                                                <div class="task-list d-flex flex-column bg-warning">
-                                                    <h2>Your Task Approval List:</h2>
-                                                 <!---   <div class="row"> -->
-                                                    <div class=" mb-3">
-                                                        <div class="input-group-prepend ">
-                                                            <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
-                                                            <div class="task-list-box d-flex  w-100 p-2 bg-white ">{{ post.task.name }}</div>
-                                                            <div class="task-list-box d-flex w-100 p-2 bg-white">{{ post.task.value }}</div>
-                                                        </div> 
-                                                    </div>
+                    </ul>
 
-                                                    <div class=" mb-3">
-                                                        <div class="input-group-prepend ">
-                                                            <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
-                                                            <div class="task-list-box d-flex  w-100 p-2 bg-white ">Task Name</div>
-                                                            <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
-                                                        </div> 
-                                                    </div>
-                                                    <div class=" mb-3">
-                                                        <div class="input-group-prepend ">
-                                                            <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
-                                                            <div class="task-list-box d-flex  w-100 p-2 bg-white ">Task Name</div>
-                                                            <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
-                                                        </div> 
-                                                    </div>
-                                                    <div class=" mb-3">
-                                                        <div class="input-group-prepend ">
-                                                            <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
-                                                            <div class="task-list-box d-flex  w-100 p-2 bg-white ">Task Name</div>
-                                                            <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
-                                                        </div> 
-                                                    </div>
-                                                    <div class=" mb-3">
-                                                        <div class="input-group-prepend ">
-                                                            <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
-                                                            <div class="task-list-box d-flex  w-100 p-2 bg-white ">Task Name</div>
-                                                            <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
-                                                        </div> 
-                                                    </div>
-                                                    <div class=" mb-3">
-                                                        <div class="input-group-prepend ">
-                                                            <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
-                                                            <div class="task-list-box d-flex  w-100 p-2 bg-white ">Task Name</div>
-                                                            <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
-                                                        </div> 
-                                                    </div>
-                                                    <!--</div> -->
-                                                </div>
-                                            </div>
-                                            <div class=" col-md-6">
-                                                <div class="task-list d-flex flex-column">
-                                                    <h2>Your Reward Approval List:</h2>
-                                                    <!--<div class="row"> -->
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
-                                                            </div> 
-                                                        </div>
-                                                        <div class=" mb-3">
-                                                            <div class="input-group-prepend ">
-                                                                <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
-                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
-                                                            </div> 
-                                                        </div>
-                                                    <!--</div> -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                               </div>
-                           </div>
+                </nav>
+                <!-- END OF TOPBAR -->
+
+                <!-- PAGE CONTENT -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                      <div class="card border-left-primary shadow h-100 py-2">
+                          <div class="card-body">
+                              <div class="row no-gutters align-items-center">
+                                  <div class="col mr-2">
+                                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Your Children's Current Points Balance</div>
+                                      <div class="h5 mb-0 font-weight-bold text-gray-800">500</div>
+                                  </div>
+                                  <div class="col-auto">
+                                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                    <!-- Dropdown Card Example -->
+                    <div class="card shadow mb-4">
+                      <!-- Card Header - Dropdown -->
+                      <div
+                          class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                          <h6 class="m-0 font-weight-bold text-primary">Your Task Approval List</h6>
+                          <div class="dropdown no-arrow">
+                              <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                              </a>
+                              
+                          </div>
+                      </div>
+                      <!-- Card Body -->
+                      <div class="card-body">
+                          Dropdown menus can be placed in the card header in order to extend the functionality
+                          of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis
+                          icon in the card header can be clicked on in order to toggle a dropdown menu.
+                        <div class="table-responsive">
+                          <table class="table">  
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Child 1</th>
+                                    <td>Completed</td>
+                                    <td>Task Name</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Child 2</th>
+                                    <td>Completed</td>
+                                    <td>Task Name</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Child 3</th>
+                                    <td>Completed</td>
+                                    <td>Task Name</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Child 4</th>
+                                    <td>Completed</td>
+                                    <td>Task Name</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Child 5</th>
+                                    <td>Completed</td>
+                                    <td>Task Name</td>
+                                </tr>
+                            </tbody>
+                          </table>
+                        </div> 
+                      </div> 
+                    </div>
+                  </div>
+                 </div>
+
+                  <!-- Dropdown Card Example -->
+                  <div class="card shadow mb-4">
+                    <!-- Card Header - Dropdown -->
+                    <div
+                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Your Reward Approval List</h6>
+                        <div class="dropdown no-arrow">
+                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                            </a>
+                          
                         </div>
-                     </div>  
+                    </div>
+                    <!-- Card Body -->
+                    <div class="card-body">
+                          Dropdown menus can be placed in the card header in order to extend the functionality
+                          of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis
+                          icon in the card header can be clicked on in order to toggle a dropdown menu.
+                        <div class="table-responsive">
+                          <table class="table">  
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Child 1</th>
+                                    <td>Requested</td>
+                                    <td>Task Name</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Child 2</th>
+                                    <td>Requested</td>
+                                    <td>Task Name</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Child 3</th>
+                                    <td>Requested</td>
+                                    <td>Task Name</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Child 4</th>
+                                    <td>Requested</td>
+                                    <td>Task Name</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Child 5</th>
+                                    <td>Requested</td>
+                                    <td>Task Name</td>
+                                </tr>
+                            </tbody>
+                          </table>
+                        </div> 
+                      </div>
                 </div>
-              </div>
-                
+                <!-- /.container-fluid -->
+
             </div>
+            <!-- END OF MAIN CONTENT -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Reward Bank 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
         </div>
+        <!-- End of Content Wrapper -->
+
     </div>
-    
+    <!-- End of Page Wrapper -->
+
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}
-
-    <script src="/javascript/user-routes.js"></script>
-    <script src="/javascript/task-routes.js"></script>
-    <script src="/javascript/reward-routes.js"></script>
