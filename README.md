@@ -4,12 +4,16 @@
 As the world begins to move more and more towards digital currency and away from physical, Reward Bank strives to teach children the importance of money management that reflects how we now interact with money.
 
 <br />
+
+![GitHub license badge](https://img.shields.io/badge/license-MIT-orange)
+
 <br />
 
 Table of Contents |
 -------------------|
 [Installation](#Installation)
 [Usage](#Usage)
+[License](#License)
 [Contributing](#Contributing)
 [Authors](#Authors)
 [Questions](#Questions)
@@ -39,13 +43,17 @@ Repo Link: [Repo Link](https://github.com/UTBootCampGroup2Project2/reward-bank)
 
 <br />
 
+##  License
+
+The license for this project is MIT. For full details, refer to the license file within the repository.
+
+<br />
+
 ## Contributing
 
 <!-- How do we want people to contribute to them? -->
 
 <br />
-
-
 
 ## Authors
 
