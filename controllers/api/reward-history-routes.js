@@ -52,6 +52,7 @@ router.put('/:rewardHistoryId', (req, res) => {
         id: req.params.rewardHistoryId,
         reward_id: req.body.reward_id,
         purchased_by_user_id: req.body.purchased_by_user_id,
+        status: req.body.status
     },
     {
         where: {
