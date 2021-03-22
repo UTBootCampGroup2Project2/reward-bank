@@ -1,41 +1,152 @@
-<h1 class="section-banner"><span>Your Dashboard</span></h1>
-<main>
-  <section class="new-post-section">
-    <h2>Create New Post</h2>
-    <form class="new-post-form">
-      <div>
-        <label for="post-title">Title</label>
-        <input type="text" id="post-title" name="post-title" />
-      </div>
-      <div>
-        <label for="post-content">Content</label>
-        <textarea id="post-content" name="post-content" cols="70" rows="5"></textarea>
-      </div>
-      <button type="submit" class="btn">Create</button>
-      <button type="button" class="discard-post-btn">Discard</button>
-    </form>
-  </section>
-  <section class="add-new-post-section">
-    <button type="button" class="create-post-btn">Add New Post</button>
-  </section>
+    <div class="homepage">
+        <div class="row">
+            <div class="col-sm-6 col-lg-12">
+                <div class="homepage-form-bg d-flex flex-column">
+                     <img src="images/reward-bank-logo.png" alt="logo" class="homepage-logo">
+                     <div class="header-btns align-self-end">
+                        <a class="settings-btn btn btn-danger" href="/settings" role="button">Settings</a>
+                        
+                        {{#if loggedIn}}
+                        <button id="logout" class="btn btn-danger">logout</button>
+                        {{else}}
+                        <a href="/login">login</a>
+                        {{/if}}
+                     </div>
+                        <div class="flex-column">
+                           <div class="col-lg-6 col-lg-12 offset-sm-4 offset-lg-0 " >
+                               <div class="approve-list">
+                                   <h2>Welcome {{ post.user.username}} </h2>
+                                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Ut beatae perferendis repellat asperiores corporis odio voluptates, 
+                                        sequi odit libero inventore quidem error maxime, animi, doloribus sunt. 
+                                        In magni hic numquam.
+                                   </p>
+                                   <div class="d-flex p-4">
+                                       <div class="col-md-4 flex-row">
+                                           <div class="child-points">
+                                               <p>Your Children's Current Points Balance:</p>
+                                               <p> {{post.reward.status}} </p>
+                                           </div>
+                                       </div>
+                                   </div>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class=" col-md-6">
+                                                <div class="task-list d-flex flex-column bg-warning">
+                                                    <h2>Your Task Approval List:</h2>
+                                                 <!---   <div class="row"> -->
+                                                    <div class=" mb-3">
+                                                        <div class="input-group-prepend ">
+                                                            <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
+                                                            <div class="task-list-box d-flex  w-100 p-2 bg-white ">{{ post.task.name }}</div>
+                                                            <div class="task-list-box d-flex w-100 p-2 bg-white">{{ post.task.value }}</div>
+                                                        </div> 
+                                                    </div>
 
-  {{#if posts.length}}
-  <section class="dashboard-posts">
-    <h2>Your Posts</h2>
-    <ol>
-      {{#each posts as |post|}}
-      <li>
-        {{> dashboard-post-info post}}
-      </li>
-      {{/each}}
-    </ol>
-  </section>
-  {{else}}
-  <section>
-    <h2>You have no posts.</h2>
-  </section>
-  {{/if}}
+                                                    <div class=" mb-3">
+                                                        <div class="input-group-prepend ">
+                                                            <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
+                                                            <div class="task-list-box d-flex  w-100 p-2 bg-white ">Task Name</div>
+                                                            <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
+                                                        </div> 
+                                                    </div>
+                                                    <div class=" mb-3">
+                                                        <div class="input-group-prepend ">
+                                                            <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
+                                                            <div class="task-list-box d-flex  w-100 p-2 bg-white ">Task Name</div>
+                                                            <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
+                                                        </div> 
+                                                    </div>
+                                                    <div class=" mb-3">
+                                                        <div class="input-group-prepend ">
+                                                            <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
+                                                            <div class="task-list-box d-flex  w-100 p-2 bg-white ">Task Name</div>
+                                                            <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
+                                                        </div> 
+                                                    </div>
+                                                    <div class=" mb-3">
+                                                        <div class="input-group-prepend ">
+                                                            <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
+                                                            <div class="task-list-box d-flex  w-100 p-2 bg-white ">Task Name</div>
+                                                            <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
+                                                        </div> 
+                                                    </div>
+                                                    <div class=" mb-3">
+                                                        <div class="input-group-prepend ">
+                                                            <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
+                                                            <div class="task-list-box d-flex  w-100 p-2 bg-white ">Task Name</div>
+                                                            <div class="task-list-box d-flex w-100 p-2 bg-white">Task Value</div>
+                                                        </div> 
+                                                    </div>
+                                                    <!--</div> -->
+                                                </div>
+                                            </div>
+                                            <div class=" col-md-6">
+                                                <div class="task-list d-flex flex-column">
+                                                    <h2>Your Reward Approval List:</h2>
+                                                    <!--<div class="row"> -->
+                                                        <div class=" mb-3">
+                                                            <div class="input-group-prepend ">
+                                                                <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
+                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
+                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
+                                                            </div> 
+                                                        </div>
+                                                        <div class=" mb-3">
+                                                            <div class="input-group-prepend ">
+                                                                <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
+                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
+                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
+                                                            </div> 
+                                                        </div>
+                                                        <div class=" mb-3">
+                                                            <div class="input-group-prepend ">
+                                                                <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
+                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
+                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
+                                                            </div> 
+                                                        </div>
+                                                        <div class=" mb-3">
+                                                            <div class="input-group-prepend ">
+                                                                <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
+                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
+                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
+                                                            </div> 
+                                                        </div>
+                                                        <div class=" mb-3">
+                                                            <div class="input-group-prepend ">
+                                                                <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
+                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
+                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
+                                                            </div> 
+                                                        </div>
+                                                        <div class=" mb-3">
+                                                            <div class="input-group-prepend ">
+                                                                <button class="btn1 btn-outline-secondary" type="button">Child 1</button>
+                                                                <div class="task-list-box d-flex w-100 p-2 bg-white ">Reward Name</div>
+                                                                <div class="task-list-box d-flex w-100 p-2 bg-white">Reward Value</div>
+                                                            </div> 
+                                                        </div>
+                                                    <!--</div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                               </div>
+                           </div>
+                        </div>
+                     </div>  
+                </div>
+              </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
 
-  <script src="/javascript/add-post.js"></script>
-  <script src="/javascript/discard-post.js"></script>
-</main>
+    <script src="/javascript/user-routes.js"></script>
+    <script src="/javascript/task-routes.js"></script>
+    <script src="/javascript/reward-routes.js"></script>

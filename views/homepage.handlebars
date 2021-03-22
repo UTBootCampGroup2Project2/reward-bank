@@ -1,16 +1,205 @@
-<h1 class="section-banner"><span>The Tech Blog</span></h1>
-<main>
-  <ol class="post-list">
-    {{#if posts.length}}
-    {{else}}
-      <section>
-        <h2>Sad panda is lonely. Hope someone posts soon...</h2>
-      </section>
-    {{/if}}
-    {{#each posts as |post|}}
-    <li>
-      {{> post-info post }}
-    </li>
-    {{/each}}
-  </ol>
-</main>
+<style>
+	.header_16{
+		background-image:url(./images/header-test-2-edit.gif);
+	}
+	@media(-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi){
+		.header_16{
+			background-image:url(./images/header-test-2-edit.gif);
+		}
+	}
+</style>
+
+<header class="pt-145 pb-115 header_16">
+
+	<!-- Header Menu 16 -->
+
+	<nav class="header_menu_16 pt-30 pb-30 mt-15">
+		<div class="container px-xl-0">
+			<div class="row justify-content-center">
+			<div class="col-xl-10" data-aos-duration="600" data-aos="fade-down" data-aos-delay="1200">
+					<div class="row align-items-baseline">
+						<div class="col-lg-9 d-flex align-items-center f-18 medium">
+							<div class="mr-15 logo color-white">Reward Bank</div>
+							<a href="#" class="mx-15 link color-white">Tour</a>
+							<a href="#" class="mx-15 link color-white">About</a>
+							<a href="#" class="mx-15 link color-white">Support</a>
+						</div>
+						<div class="mt-20 mt-lg-0 col-lg-3 d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center">
+              {{#if loggedIn}}
+              {{else}}
+							<!--SIGN UP LINK-->
+               <a href="/login" class="btn sm action-2 f-16">Login</a>
+                {{/if}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+ 
+
+<div class="container px-xl-0 color-white">
+		<div class="row justify-content-center">
+			<div class="col-xl-10">
+				<div class="row flex-column-reverse flex-md-row align-items-stretch text-center text-md-left">
+					<div class="col-lg-7 col-md-9 pt-40">
+						<div class="mb-3 logo d-block d-xl-none color-white logo_mobile">Reward Bank</div>
+						<h1 class="mb-20 big" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">What is Reward Bank</h1>
+						<div class="f-22 text-adaptive" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
+							With Reward Bank users can earn real life rewards for doing tasks such as chores, homework, assignments etc.
+                            Great for teachers and parents.	</div>
+						<div class="mt-80 row blocks">
+							<div class="mt-30 col-sm-6" data-aos-duration="600" data-aos="fade-down" data-aos-delay="600">
+								<i class="f-50 fas fa-users"></i>								<div class="mt-30 mb-25 semibold f-20 title">User Managment</div>
+								<div class="text-adaptive">
+									Create a parent account and start assigning tasks and rewards for the junior accounts to complete.								</div>
+							</div>
+							<div class="mt-30 col-sm-6" data-aos-duration="600" data-aos="fade-down" data-aos-delay="900">
+								<i class="f-50 fas fa-wallet"></i>								<div class="mt-30 mb-25 semibold f-20 title">Reward System</div>
+								<div class="text-adaptive">
+									Teach users money managing skills with our intutive point system! 							</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-5 col-md-3 d-flex align-items-center" data-aos-duration="600" data-aos="fade-down" data-aos-delay="1200">
+						<img srcset="images/reward-bank-logo 2x" src="images/reward-bank-logo.png" class="ml-30 mh-full img" alt="" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+
+<!-- Feature 37 -->
+
+<section class="feature_37 bg-light pt-100 pb-65">
+	<div class="container px-xl-0">
+		<div class="row justify-content-between">
+			<div class="col-xl-1"></div>
+			<div class="col-lg-5 col-md-6 mb-50 mb-md-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
+				<h2 class="mb-20 small">
+					Create a beautiful, 
+					responsive website 
+					like this one in under 
+					60 minutes
+				</h2>
+				<div class="mb-25 f-18 medium color-heading op-7 text-adaptive">
+					Introducing 30 brand new designed and coded 
+					blocks for your next impressive project
+				</div>
+				<a href="#" class="btn sm action-1 f-16">Explore</a>
+			</div>
+			<div class="col-md-1"></div>
+			<div class="col-md-5" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
+				<div class="mb-55 d-flex align-items-center advantage">
+					<i class="fas fa-sync-alt color-gray f-26 lh-24 w-30 mr-20"></i>
+					<div class="f-14 semibold text-uppercase sp-20 title">Useful Components</div>
+				</div>
+				<div class="mb-55 d-flex align-items-center advantage">
+					<i class="far fa-file color-gray f-26 lh-24 w-30 mr-20"></i>
+					<div class="f-14 semibold text-uppercase sp-20 title">30 New Feature Pages</div>
+				</div>
+				<div class="mb-55 d-flex align-items-center advantage">
+					<i class="far fa-clone color-gray f-26 lh-24 w-30 mr-20"></i>
+					<div class="f-14 semibold text-uppercase sp-20 title">Thoroughly Structured Layers</div>
+				</div>
+				<div class="mb-55 d-flex align-items-center advantage">
+					<i class="fas fa-desktop color-gray f-26 lh-24 w-30 mr-20"></i>
+					<div class="f-14 semibold text-uppercase sp-20 title">Ready to Prototype</div>
+				</div>
+				<div class="mb-55 d-flex align-items-center advantage">
+					<i class="fas fa-columns color-gray f-26 lh-24 w-30 mr-20"></i>
+					<div class="f-14 semibold text-uppercase sp-20 title"> 12 Column Grid</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Content 6 -->
+
+<style>
+	.content_6{
+		background-image:url(images/content_6_bg.jpg);
+	}
+	@media(-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi){
+		.content_6{
+			background-image:url(images/content_6_bg@2x.jpg);
+		}
+	}
+</style>
+
+<section class="content_6 pt-125 pb-105">
+	<div class="container px-xl-0 text-center color-white">
+		<div class="row justify-content-center">
+			<div class="col-lg-8 col-md-10" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
+				<h2>The Third Sneak-Peek of Startup Framework</h2>
+			</div>
+			<div class="mt-35 col-xl-7 col-lg-8 col-md-10 f-22 text-adaptive" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
+				We have created a new product that will help designers, developers 
+				and companies create websites for their <br />startups quickly and easily.			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Footer 3 -->
+
+<footer class="footer_3 bg-light pt-100 pb-100 text-center text-lg-left">
+	<div class="container px-xl-0">
+		<div class="row">
+			<div class="col-xl-1"></div>
+			<div class="mb-50 mb-lg-0 col-lg-4" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
+				<div class="row">
+					<div class="col-12">
+						<a href="#" class="logo link color-main">Startup 3</a>
+					</div>
+					<div class="mt-30 mb-35 col-xl-7 col-lg-9 color-heading text-adaptive description">
+						Be sure to take a look at 
+						our <a href="#" class="link color-heading">Terms of Use</a> and 
+						<a href="#" class="link color-heading">Privacy Policy</a>
+					</div>
+					<div class="col-12 socials">
+						<a href="#" class="f-18 link color-main mr-30"><i class="fab fa-twitter"></i></a>
+						<a href="#" class="f-18 link color-main mr-30"><i class="fab fa-facebook-square"></i></a>
+						<a href="#" class="f-18 link color-main mr-30"><i class="fab fa-google-plus-g"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-7 col-lg-8">
+				<div class="row no-gutters">
+					<div class="col-md-3 col-6 mb-50 mb-md-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="150">
+						<div class="mb-35 f-18 semibold title">Product</div>
+						<div class="mb-10"><a href="#" class="link color-main">Features</a></div>
+						<div class="mb-10"><a href="#" class="link color-main">Pricing</a></div>
+						<div class="mb-10"><a href="#" class="link color-main">Tour</a></div>
+					</div>
+					<div class="col-md-3 col-6" data-aos-duration="600" data-aos="fade-down" data-aos-delay="600">
+						<div class="mb-35 f-18 semibold title">About</div>
+						<div class="mb-10"><a href="#" class="link color-main">About Us</a></div>
+						<div class="mb-10"><a href="#" class="link color-main">Team</a></div>
+						<div class="mb-10"><a href="#" class="link color-main">Contact</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+  <!-- Bootstrap 4.3.1 JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<!-- Google maps JS API -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDP6Ex5S03nvKZJZSvGXsEAi3X_tFkua4U"></script>
+<!-- Slick 1.8.1 jQuery plugin JS (Sliders) -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<!-- AOS 2.3.1 jQuery plugin JS (Animations) -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- Maskedinput jQuery plugin JS (Masks for input fields) -->
+<script src="../../javascript/jquery.maskedinput.min.js"></script>
+<!-- Startup 3 JS (Custom js for all blocks) -->
+<script src="../../javascript/landing.js"></script>
+
+ <script>
+    AOS.init();
+  </script>
