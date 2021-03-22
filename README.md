@@ -49,6 +49,10 @@ Repo Link: [Repo Link](https://github.com/UTBootCampGroup2Project2/reward-bank)
 ## Authors
 
 <!-- add authors and github links -->
+Andaleeb Farooq - [github link]() <br />
+Brandon Burton - [github link]() <br />
+Brian Wang - [github link]() <br />
+Hayley Vuylsteke - [github link]()
 
 <br />
 
