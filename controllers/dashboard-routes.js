@@ -8,47 +8,116 @@ router.get('/', withAuth, (req, res) => {
 
    User.findOne({
        where: {id: req.session.user_id},
-       attributes: ['name', 'admin_id']
+       attributes: ['admin_id']
    })
    .then(dbUserData => {
-        data.user = dbUserData.toJSON();
-        data.isAdmin = data.user.admin_id ? false : true;
+        data.isAdmin = dbUserData.toJSON().admin_id ? false : true;
    })
    .then(() => {
-        return User.findAll({
-            where: {admin_id: req.session.user_id},
-            attributes: ['id', 'name', 'balance']
-        })
+        if(data.isAdmin){
+            // parent route
+            return User.findOne({
+                where: {id: req.session.user_id},
+                attributes: ['name', 'admin_id']
+            })
+            .then(dbData => {
+                data.user = dbData.toJSON();
+            })
+            .then(() => {
+                return User.findAll({
+                    where: {admin_id: req.session.user_id},
+                    attributes: ['id', 'name', 'balance']
+                })
+                .then(dbData => {
+                    data.children = dbData.map(entry => entry.get({ plain: true }));
+                });
+            })
+            .then(() => {
+                const children_id_list = data.children.map(child => child.id);
+
+                return Task_History.findAll({
+                    where: {completed_by_user_id: children_id_list, status: 'pending'},
+                    attributes: ['id', 'completed_by_user_id', 'task_id'],
+                    include: [{model: User, attributes: ['name']}, {model: Task, attributes: ['name', 'value']}]
+                })
+                .then(dbData => {
+                    data.task_history = dbData.map(entry => entry.get({ plain: true }));
+                    // console.log(data.task_history);
+                });
+            })
+            .then(() => {
+                const children_id_list = data.children.map(child => child.id);
+
+                return Reward_History.findAll({
+                    where: {purchased_by_user_id: children_id_list},
+                    attributes: ['id', 'reward_id'],
+                    include: [{model: User, attributes: ['name']}, {model: Reward, attributes: ['name']}]
+                })
+                .then(dbData => {
+                    data.reward_history = dbData.map(entry => entry.get({ plain: true }));
+                });
+            })
+       }
+       else{
+            // children route
+            return User.findOne({
+                where: {id: req.session.user_id},
+                attributes: ['name', 'balance', 'admin_id']
+            })
+            .then(dbData => {
+                data.user = dbData.toJSON();
+            })
+            .then(() => {
+                // console.log(data.user.admin_id);
+                return Task.findAll({
+                    where: {created_by_user_id: data.user.admin_id, status: 'active'},
+                    attributes: ['id', 'name', 'value']
+                })
+                .then(dbData => {
+                    data.tasks = dbData.map(entry => entry.get({ plain: true }));
+                    // console.log(data.task_history);
+                });
+            })
+            .then(() => {
+                // console.log(data.user.admin_id);
+                return Task_History.findAll({
+                    where: {completed_by_user_id: req.session.user_id, status: 'completed'},
+                    attributes: ['id'],
+                    include: [{model: Task, attributes: ['name', 'value']}]
+                })
+                .then(dbData => {
+                    data.task_history_list = dbData.map(entry => entry.get({ plain: true }));
+                    // console.log(data.task_history);
+                });
+            })
+            .then(() => {
+                // console.log(data.user.admin_id);
+                return Reward.findAll({
+                    where: {created_by_user_id: data.user.admin_id, status: 'active'},
+                    attributes: ['id', 'name', 'cost']
+                })
+                .then(dbData => {
+                    data.rewards = dbData.map(entry => entry.get({ plain: true }));
+                    // console.log(data.task_history);
+                });
+            })
+            .then(() => {
+                // console.log(data.user.admin_id);
+                return Reward_History.findAll({
+                    where: {purchased_by_user_id: req.session.user_id},
+                    attributes: ['id'],
+                    include: [{model: Reward, attributes: ['name', 'cost']}]
+                })
+                .then(dbData => {
+                    data.reward_history_list = dbData.map(entry => entry.get({ plain: true }));
+                    // console.log(data.reward_history);
+                });
+            });
+       }
+       
    })
-   .then(dbUserData => {
-        data.children = dbUserData.map(user => user.get({ plain: true }));
-    })
-    .then(() => {
-        const children_id_list = data.children.map(child => child.id);
-        return Task_History.findAll({
-            where: {completed_by_user_id: children_id_list, status: 'pending'},
-            attributes: ['id', 'completed_by_user_id', 'task_id'],
-            include: [{model: User, attributes: ['name']}, {model: Task, attributes: ['name', 'value']}]
-        })
-   })
-   .then(dbTaskHistoryData => {
-        data.task_history = dbTaskHistoryData.map(task_history => task_history.get({ plain: true }));
-        // console.log(data.task_history);
-    })
-    .then(() => {
-        const children_id_list = data.children.map(child => child.id);
-        return Reward_History.findAll({
-            where: {purchased_by_user_id: children_id_list},
-            attributes: ['id', 'reward_id'],
-            include: [{model: User, attributes: ['name']}, {model: Reward, attributes: ['name']}]
-        })
-   })
-   .then(dbRewardHistoryData => {
-        data.reward_history = dbRewardHistoryData.map(reward_history => reward_history.get({ plain: true }));
-        
-    })
    .then(() => {
-        // console.log(data);
+        console.log(data);
         res.render('dashboard', { data, loggedIn: req.session.loggedIn});
    })
    .catch(err => {

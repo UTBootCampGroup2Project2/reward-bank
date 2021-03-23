@@ -48,16 +48,24 @@
                               <div class="row no-gutters align-items-center">
                                   <div class="col mr-2">
                                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 ">
+                                        {{#if data.isAdmin}}
                                         Your Children's Current Points Balance
+                                        {{else}}
+                                        Your Current Points Balance
+                                        {{/if}}
+                                        
                                         </div>
                                       <div class="table-responsive-sm">
                                         <table class="table">
                                            <tbody>
-                                                {{#each data.children as |child|}}
-                                                <tr>
+                                                {{#if data.isAdmin}}
+                                                  {{#each data.children as |child|}}
                                                     {{> dashboard-children-balance child}}
-                                                </tr>
-                                                {{/each}}
+                                                  {{/each}}
+                                                {{else}}
+                                                  <td id="user_balance">{{data.user.balance}}</td>
+                                                {{/if}}
+
                                         </table>
                                       </div>
                                   </div>
@@ -66,59 +74,11 @@
                       </div>
                   </div>
 
-                    <!-- Dropdown Card  -->
-                    <div class="card shadow mb-4">
-                      <!-- Card Header -->
-                      <div
-                          class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                          <h6 class="m-0 font-weight-bold text-primary">Your Task Approval List</h6>
-                      </div>
-                      <!-- Card Body -->
-                      <div class="card-body">
-                          Dropdown menus can be placed in the card header in order to extend the functionality
-                          of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis
-                          icon in the card header can be clicked on in order to toggle a dropdown menu.
-                        <div class="table-responsive">
-                          <table class="table">  
-                            <tbody>
-                                <tr>
-                                    {{#each data.task_history as |task_history|}}
-                                      {{> dashboard-task-approval task_history}}
-                                    {{/each}}
-                                </tr>
-                            </tbody>
-                          </table>
-                        </div> 
-                      </div> 
-                    </div>
-
-                     <!-- Dropdown Card Example -->
-                    <div class="card shadow mb-4">
-                      <!-- Card Header -->
-                      <div
-                          class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                          <h6 class="m-0 font-weight-bold text-primary">Your Reward Approval List</h6>
-                      </div>
-                      <!-- Card Body -->
-                      <div class="card-body">
-                          Dropdown menus can be placed in the card header in order to extend the functionality
-                          of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis
-                          icon in the card header can be clicked on in order to toggle a dropdown menu.
-                        <div class="table-responsive">
-                          <table class="table">  
-                            <tbody>
-                                <tr>
-                                    {{#each data.reward_history as |reward_history|}}
-                                    <tr>
-                                        {{> dashboard-reward-history reward_history}}
-                                    </tr>
-                                    {{/each}}
-                                </tr>
-                            </tbody>
-                          </table>
-                        </div> 
-                      </div> 
-                    </div>
+                  {{#if data.isAdmin}}
+                    {{> dashboard-parent data}}
+                  {{else}}
+                    {{> dashboard-child data}}
+                  {{/if}}
 
                     
                 </div>
