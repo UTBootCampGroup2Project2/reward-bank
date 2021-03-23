@@ -51,7 +51,6 @@ router.post('/:childId', (req, res) => {
 //change task history status to complete
 router.put('/:taskHistoryId', (req, res) => {
     Task_History.update({
-        id: req.params.taskHistoryId,
         status: req.body.status
     },
     {

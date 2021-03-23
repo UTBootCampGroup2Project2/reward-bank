@@ -1,3 +1,6 @@
-<th scope="row">{{user.name}}</th>
-<td>Pending</td>
-<td>{{task.name}}</td>
+<tr id="task_history_entry_{{id}}">
+  <th scope="row">{{user.name}}</th>
+  <td>Pending</td>
+  <td>{{task.name}}</td>
+  <td><button type="button" class="approve-task-btn" task_history_id="{{id}}">Approve</button></td>
+</tr>

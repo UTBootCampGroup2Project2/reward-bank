@@ -42,6 +42,7 @@ router.get('/', withAuth, (req, res) => {
         return Task_History.findAll({
             where: {completed_by_user_id: children_id_list, status: 'pending'},
             attributes: [
+                'id',
                 'completed_by_user_id',
                 'task_id'
             ],
@@ -56,14 +57,15 @@ router.get('/', withAuth, (req, res) => {
    })
    .then(dbTaskHistoryData => {
         data.task_history = dbTaskHistoryData.map(task_history => task_history.get({ plain: true }));
-        // console.log("data.task_history");
-        // console.log(data.task_history);
+        console.log("data.task_history");
+        console.log(data.task_history);
     })
     .then(() => {
         const children_id_list = data.children.map(child => child.id);
         return Reward_History.findAll({
             where: {purchased_by_user_id: children_id_list},
             attributes: [
+                'id',
                 'reward_id'
             ],
             include: [{

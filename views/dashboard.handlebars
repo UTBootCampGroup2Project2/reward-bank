@@ -83,9 +83,7 @@
                             <tbody>
                                 <tr>
                                     {{#each data.task_history as |task_history|}}
-                                    <tr>
-                                        {{> dashboard-task-approval task_history}}
-                                    </tr>
+                                      {{> dashboard-task-approval task_history}}
                                     {{/each}}
                                 </tr>
                             </tbody>
@@ -146,7 +144,8 @@
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}
-
-    <script src="/javascript/add-post.js"></script>
+    {{#if data.task_history.length}}
+    <script src="/javascript/task-approval.js"></script>
+    {{/if}}
 
    
