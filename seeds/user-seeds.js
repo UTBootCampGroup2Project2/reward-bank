@@ -2,19 +2,11 @@ const { User } = require('../models');
 
 const UserData = [
   {
-    name: "admin1name",
-    username: "admin1",
-    password: "password",
-    role: "parent",
-    balance: null,
-    admin_id: null
-  },
-  {
     name: "child1name",
     username: "child1",
     password: "password",
     role: "child",
-    balance: 0,
+    balance: 10,
     admin_id: 1
   },
   {

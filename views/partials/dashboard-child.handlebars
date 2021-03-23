@@ -33,7 +33,7 @@
       <table class="table">  
         <tbody>
             <tr>
-                {{#each task_history_list as |task_history|}}
+                {{#each task_history as |task_history|}}
                   {{> dashboard-completed-task task_history}}
                 {{/each}}
             </tr>
@@ -80,7 +80,7 @@
       <table class="table">  
         <tbody>
             <tr>
-                {{#each reward_history_list as |reward_history|}}
+                {{#each reward_history as |reward_history|}}
                   {{> dashboard-requested-reward reward_history}}
                 {{/each}}
             </tr>
@@ -89,3 +89,4 @@
     </div> 
   </div> 
 </div>
+<div id="current_user_id" user_id="{{user.id}}"></div>

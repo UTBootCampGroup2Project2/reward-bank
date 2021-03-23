@@ -6,7 +6,6 @@ async function taskApprovalHandler(event) {
   const task_value = parseInt(event.toElement.getAttribute('task_value'));
   const user_balance = parseInt(document.getElementById(`user_balance_${completed_by_user_id}`).textContent);
 
-  console.log(typeof(task_value) );
   if (task_history_id) {
     fetch(`/api/task-history/${task_history_id}`, {
       method: 'PUT',

@@ -15,7 +15,7 @@ const hbs = exphbs.create({ helpers });
 const sess = {
   secret: 'Super secret secret',
   rolling: true,
-  cookie: {maxAge:15*60*1000}, // auto logout after 15 min of inactivity
+  cookie: {maxAge:60*60*1000}, // auto logout after 60 min of inactivity
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({

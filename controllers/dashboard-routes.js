@@ -62,7 +62,7 @@ router.get('/', withAuth, (req, res) => {
             // children route
             return User.findOne({
                 where: {id: req.session.user_id},
-                attributes: ['name', 'balance', 'admin_id']
+                attributes: ['id', 'name', 'balance', 'admin_id']
             })
             .then(dbData => {
                 data.user = dbData.toJSON();
@@ -86,7 +86,7 @@ router.get('/', withAuth, (req, res) => {
                     include: [{model: Task, attributes: ['name', 'value']}]
                 })
                 .then(dbData => {
-                    data.task_history_list = dbData.map(entry => entry.get({ plain: true }));
+                    data.task_history = dbData.map(entry => entry.get({ plain: true }));
                     // console.log(data.task_history);
                 });
             })
@@ -109,7 +109,7 @@ router.get('/', withAuth, (req, res) => {
                     include: [{model: Reward, attributes: ['name', 'cost']}]
                 })
                 .then(dbData => {
-                    data.reward_history_list = dbData.map(entry => entry.get({ plain: true }));
+                    data.reward_history = dbData.map(entry => entry.get({ plain: true }));
                     // console.log(data.reward_history);
                 });
             });
@@ -117,7 +117,7 @@ router.get('/', withAuth, (req, res) => {
        
    })
    .then(() => {
-        console.log(data);
+        // console.log(data);
         res.render('dashboard', { data, loggedIn: req.session.loggedIn});
    })
    .catch(err => {
