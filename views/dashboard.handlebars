@@ -11,7 +11,7 @@
                 <nav class="navbar navbar-expand navbar-light bg-warning topbar static-top shadow">
                     <!-- Topbar Search -->
                     <form>
-                       <h3 id="header-name">Welcome {{user.name}} </h3>
+                       <h3 id="header-name">Welcome {{data.user.name}} </h3>
                     </form>
 
                     <!-- Topbar Navbar -->
@@ -32,7 +32,7 @@
 
                 <!-- PAGE CONTENT -->
                 <div class="container-fluid bg-info">
-
+                    <br>
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Lets get started.</h1>
 
@@ -48,7 +48,7 @@
                                       <div class="table-responsive-sm">
                                         <table class="table">
                                            <tbody>
-                                                {{#each children as |child|}}
+                                                {{#each data.children as |child|}}
                                                 <tr>
                                                     {{> dashboard-children-balance child}}
                                                 </tr>
@@ -76,6 +76,13 @@
                           <table class="table">  
                             <tbody>
                                 <tr>
+                                    {{#each data.task_history as |task_history|}}
+                                    <tr>
+                                        {{> dashboard-task-approval task_history}}
+                                    </tr>
+                                    {{/each}}
+                                </tr>
+                                {{!-- <tr>
                                     <th scope="row">Child 1</th>
                                     <td>Completed</td>
                                     <td>Task Name</td>
@@ -99,7 +106,7 @@
                                     <th scope="row">Child 5</th>
                                     <td>Completed</td>
                                     <td>Task Name</td>
-                                </tr>
+                                </tr> --}}
                             </tbody>
                           </table>
                         </div> 

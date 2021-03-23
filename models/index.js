@@ -9,6 +9,10 @@ User.hasOne(User, {
   foreignKey: 'admin_id'
 });
 
+User.hasMany(User, {
+  foreignKey: 'admin_id'
+});
+
 Task.belongsTo(User, {
   foreignKey: 'created_by_user_id'
 });

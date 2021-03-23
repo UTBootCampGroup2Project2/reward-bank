@@ -1,13 +1,15 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { User, Task_History } = require('../models');
+const { User, Task, Task_History } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
     // console.log('======================');
     // console.log(req.session);
+    let data = {};
     let user;
     let children;
+    let task_history;
 
    User.findOne({
        where: {id: req.session.user_id},
@@ -16,24 +18,48 @@ router.get('/', withAuth, (req, res) => {
        ]
    })
    .then(dbUserData => {
-        user = dbUserData.toJSON();
-        console.log(user);
+        data.user = dbUserData.toJSON();
+        // console.log(user);
    })
    .then(() => {
         return User.findAll({
             where: {admin_id: req.session.user_id},
             attributes: [
+                'id',
                 'name',
                 'balance'
             ]
         })
    })
    .then(dbUserData => {
-        children = dbUserData.map(user => user.get({ plain: true }));
-        console.log(children);
+        data.children = dbUserData.map(user => user.get({ plain: true }));
+        // console.log(children);
+    })
+    .then(() => {
+        const children_id_list = data.children.map(child => child.id);
+        return Task_History.findAll({
+            where: {completed_by_user_id: children_id_list, status: 'pending'},
+            attributes: [
+                'completed_by_user_id',
+                'task_id'
+            ],
+            include: [{
+                model: User,
+                attributes: ['name']
+            },{
+                model: Task,
+                attributes: ['name']
+            }]
+        })
+   })
+   .then(dbTaskHistoryData => {
+        data.task_history = dbTaskHistoryData.map(task_history => task_history.get({ plain: true }));
+        // console.log("data.task_history");
+        // console.log(data.task_history);
     })
    .then(() => {
-        res.render('dashboard', { user, children, loggedIn: req.session.loggedIn});
+        console.log(data);
+        res.render('dashboard', { data, loggedIn: req.session.loggedIn});
    })
    .catch(err => {
         console.log(err);

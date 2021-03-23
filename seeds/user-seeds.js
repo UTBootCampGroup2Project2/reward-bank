@@ -24,38 +24,6 @@ const UserData = [
     role: "child",
     balance: 50,
     admin_id: 1
-  },
-  {
-    name: "admin2name",
-    username: "admin2",
-    password: "password",
-    role: "teacher",
-    balance: null,
-    admin_id: null
-  },
-  {
-    name: "student1name",
-    username: "student1",
-    password: "password",
-    role: "student",
-    balance: 1,
-    admin_id: 4
-  },
-  {
-    name: "student2name",
-    username: "student2",
-    password: "password",
-    role: "student",
-    balance: 9000,
-    admin_id: 4
-  },
-  {
-    name: "admin3name",
-    username: "admin3",
-    password: "password",
-    role: "teacher",
-    balance: null,
-    admin_id: null
   }
 ];
 
