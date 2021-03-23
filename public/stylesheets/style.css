@@ -46,6 +46,9 @@ button {
   border: none;
   outline: none !important;
 }
+.add-new-task-section {
+  display: none;
+}
 input, textarea {
   border: 0;
   outline: none;

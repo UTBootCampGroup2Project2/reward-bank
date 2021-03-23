@@ -35,10 +35,9 @@ async function taskApprovalHandler(event) {
     })
     .catch(err => {
       console.log(err);
-      res.status(500).json(err);
     });
 
   }
 }
 
-document.querySelectorAll('.approve-task-btn').forEach(btn => btn.addEventListener('click', taskApprovalHandler))
+document.querySelectorAll('.approve-task-btn').forEach(btn => btn.addEventListener('click', taskApprovalHandler));

@@ -11,7 +11,7 @@
                 <nav class="navbar navbar-expand navbar-light bg-warning topbar static-top shadow">
                     <!-- Topbar Search -->
                     <form>
-                       <h3>Welcome NAME</h3>
+                       <h3 id="header-name">Welcome {{data.user.name}} </h3>
                     </form>
 
                     <!-- Topbar Navbar -->
@@ -52,35 +52,30 @@
                           icon in the card header can be clicked on in order to toggle a dropdown menu.
                         <div class="table-responsive">
                           <table class="table">  
-                            <tbody>
-                                <tr>
-                                    <th scope="row" class="btn1" type="button">Delete</th>
-                                    <td>Task Name</td>
-                                    <td>Task Value</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" class="btn1" type="button">Delete</th>
-                                    <td>Task Name</td>
-                                    <td>Task Value</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" class="btn1" type="button">Delete</th>
-                                    <td>Task Name</td>
-                                    <td>Task Value</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" class="btn1" type="button">Delete</th>
-                                    <td>Task Name</td>
-                                    <td>Task Value</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" class="btn1" type="button">Delete</th>
-                                    <td>Task Name</td>
-                                    <td>Task Value</td>
-                                </tr>
+                            <tbody id="task-table">
+                                {{#each data.tasks as |task|}}
+                                {{> settings-task task}}
+                                {{/each}}
                             </tbody>
                           </table>
-                          <button type="button" class="btn bg-info action-1 btn-block">Add New task</button>
+                            <form class="signup-form add-new-task-section">
+                                <div>
+                                <label for="new-task-name">Name:</label>
+                                <input type="text" id="new-task-name" />
+                                </div>
+                                <div>
+                                <label for="new-task-value">Value:</label>
+                                <input type="number" id="new-task-value" />
+                                </div>
+                                <div>
+                                <button type="submit" id="add-task-btn" class="btn bg-info action-1 btn-block">Add</button>
+                                </div>
+                            </form>
+                            
+                            
+                            <button type="button" id="create-task-btn" class="btn bg-info action-1 btn-block create-new-task-section">Create New task</button>
+                            
+                            <button type="button" id="discard-task-btn" class="btn bg-info action-1 btn-block add-new-task-section">Discard</button>
                         </div> 
                       </div> 
                     </div>
@@ -153,3 +148,4 @@
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}
+     <script src="/javascript/add-task.js"></script>
