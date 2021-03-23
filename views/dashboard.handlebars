@@ -11,7 +11,7 @@
                 <nav class="navbar navbar-expand navbar-light bg-warning topbar static-top shadow">
                     <!-- Topbar Search -->
                     <form>
-                       <h3 id="header-name">Welcome NAME </h3>
+                       <h3 id="header-name">Welcome {{user.name}} </h3>
                     </form>
 
                     <!-- Topbar Navbar -->
@@ -48,18 +48,11 @@
                                       <div class="table-responsive-sm">
                                         <table class="table">
                                            <tbody>
-                                            <tr>
-                                              <th scope="row">Child 1</th>
-                                              <td>500</td>   
-                                            </tr>
-                                            <tr>
-                                              <th scope="row">Child 2</th>
-                                              <td>500</td>   
-                                            </tr>
-                                            <tr>
-                                              <th scope="row">Child 3</th>
-                                              <td>500</td>   
-                                            </tr>
+                                                {{#each children as |child|}}
+                                                <tr>
+                                                    {{> dashboard-children-balance child}}
+                                                </tr>
+                                                {{/each}}
                                         </table>
                                       </div>
                                   </div>
