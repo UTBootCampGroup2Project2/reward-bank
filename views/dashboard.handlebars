@@ -60,6 +60,7 @@
                           </div>
                       </div>
                   </div>
+
                     <!-- Dropdown Card  -->
                     <div class="card shadow mb-4">
                       <!-- Card Header -->
@@ -82,36 +83,12 @@
                                     </tr>
                                     {{/each}}
                                 </tr>
-                                {{!-- <tr>
-                                    <th scope="row">Child 1</th>
-                                    <td>Completed</td>
-                                    <td>Task Name</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Child 2</th>
-                                    <td>Completed</td>
-                                    <td>Task Name</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Child 3</th>
-                                    <td>Completed</td>
-                                    <td>Task Name</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Child 4</th>
-                                    <td>Completed</td>
-                                    <td>Task Name</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Child 5</th>
-                                    <td>Completed</td>
-                                    <td>Task Name</td>
-                                </tr> --}}
                             </tbody>
                           </table>
                         </div> 
                       </div> 
                     </div>
+
                      <!-- Dropdown Card Example -->
                     <div class="card shadow mb-4">
                       <!-- Card Header -->
@@ -128,35 +105,19 @@
                           <table class="table">  
                             <tbody>
                                 <tr>
-                                    <th scope="row">Child 1</th>
-                                    <td>Requested</td>
-                                    <td>Task Name</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Child 2</th>
-                                    <td>Requested</td>
-                                    <td>Task Name</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Child 3</th>
-                                    <td>Requested</td>
-                                    <td>Task Name</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Child 4</th>
-                                    <td>Requested</td>
-                                    <td>Task Name</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Child 5</th>
-                                    <td>Requested</td>
-                                    <td>Task Name</td>
+                                    {{#each data.reward_history as |reward_history|}}
+                                    <tr>
+                                        {{> dashboard-reward-history reward_history}}
+                                    </tr>
+                                    {{/each}}
                                 </tr>
                             </tbody>
                           </table>
                         </div> 
                       </div> 
                     </div>
+
+                    
                 </div>
             </div>
             <!-- END OF MAIN CONTENT -->

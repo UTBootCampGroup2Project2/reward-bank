@@ -33,7 +33,7 @@ Reward_History.belongsTo(Reward, {
   foreignKey: 'reward_id'
 });
 
-Reward_History.belongsTo(Reward, {
+Reward_History.belongsTo(User, {
   foreignKey: 'purchased_by_user_id'
 });
 
