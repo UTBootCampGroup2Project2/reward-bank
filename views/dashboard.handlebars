@@ -34,8 +34,13 @@
                 <div class="container-fluid bg-info">
                     <br>
                     <!-- Page Heading -->
+                    {{#if data.isAdmin}}
+                    <h1 class="h3 mb-4 text-gray-800">Parent</h1>
+                    {{else}}
+                    <h1 class="h3 mb-4 text-gray-800">Children</h1>
+                    {{/if}}
+                    
                     <h1 class="h3 mb-4 text-gray-800">Lets get started.</h1>
-
                     <!-- Current Child Points Card -->
                     <div class="col-xl-3 col-md-6 mb-4 ">
                       <div class="card border-left-primary shadow h-100 py-2 border border-warning ">

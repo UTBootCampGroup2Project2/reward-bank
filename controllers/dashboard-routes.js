@@ -14,11 +14,13 @@ router.get('/', withAuth, (req, res) => {
    User.findOne({
        where: {id: req.session.user_id},
        attributes: [
-        'name'
+        'name',
+        'admin_id'
        ]
    })
    .then(dbUserData => {
         data.user = dbUserData.toJSON();
+        data.isAdmin = data.user.admin_id ? false : true;
         // console.log(user);
    })
    .then(() => {
@@ -75,11 +77,11 @@ router.get('/', withAuth, (req, res) => {
    })
    .then(dbRewardHistoryData => {
         data.reward_history = dbRewardHistoryData.map(reward_history => reward_history.get({ plain: true }));
-        console.log("data.reward_history");
-        console.log(data.reward_history);
+        // console.log("data.reward_history");
+        // console.log(data.reward_history);
     })
    .then(() => {
-        console.log(data);
+        // console.log(data);
         res.render('dashboard', { data, loggedIn: req.session.loggedIn});
    })
    .catch(err => {
