@@ -58,7 +58,7 @@
                                 {{/each}}
                             </tbody>
                           </table>
-                            <form class="signup-form add-new-task-section">
+                            <form class="add-new-task-section">
                                 <div>
                                 <label for="new-task-name">Name:</label>
                                 <input type="text" id="new-task-name" />
@@ -74,7 +74,6 @@
                             
                             
                             <button type="button" id="create-task-btn" class="btn bg-info action-1 btn-block create-new-task-section">Create New task</button>
-                            
                             <button type="button" id="discard-task-btn" class="btn bg-info action-1 btn-block add-new-task-section">Discard</button>
                         </div> 
                       </div> 
@@ -93,35 +92,29 @@
                           icon in the card header can be clicked on in order to toggle a dropdown menu.
                         <div class="table-responsive">
                           <table class="table">  
-                            <tbody>
-                                <tr>
-                                    <th scope="row" class="btn1" type="button">Delete</th>
-                                    <td>Reward Name</td>
-                                    <td>Reward Value</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" class="btn1" type="button">Delete</th>
-                                    <td>Reward Name</td>
-                                    <td>Reward Value</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" class="btn1" type="button">Delete</th>
-                                    <td>Reward Name</td>
-                                    <td>Reward Value</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" class="btn1" type="button">Delete</th>
-                                    <td>Reward Name</td>
-                                    <td>Reward Value</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" class="btn1" type="button">Delete</th>
-                                    <td>Reward Name</td>
-                                    <td>Reward Value</td>
-                                </tr>
+                            <tbody id="reward-table">
+                                {{#each data.rewards as |reward|}}
+                                {{> settings-reward reward}}
+                                {{/each}}
                             </tbody>
                           </table>
-                          <button type="button" class="btn bg-info action-1 btn-block">Add New Reward</button>
+                            <form class="add-new-reward-section">
+                                <div>
+                                <label for="new-reward-name">Name:</label>
+                                <input type="text" id="new-reward-name" />
+                                </div>
+                                <div>
+                                <label for="new-reward-cost">Cost:</label>
+                                <input type="number" id="new-reward-cost" />
+                                </div>
+                                <div>
+                                <button type="submit" id="add-reward-btn" class="btn bg-info action-1 btn-block">Add</button>
+                                </div>
+                            </form>
+                            
+                            
+                            <button type="button" id="create-reward-btn" class="btn bg-info action-1 btn-block create-new-reward-section">Create New reward</button>
+                            <button type="button" id="discard-reward-btn" class="btn bg-info action-1 btn-block add-new-reward-section">Discard</button>
                         </div> 
                       </div> 
                     </div>
@@ -148,4 +141,7 @@
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}
-     <script src="/javascript/add-task.js"></script>
+     <script src="/javascript/task-add.js"></script>
+     <script src="/javascript/task-delete.js"></script>
+    <script src="/javascript/reward-add.js"></script>
+     {{!-- <script src="/javascript/reward-delete.js"></script> --}}

@@ -23,8 +23,6 @@ async function addTaskHandler(event) {
   })
   .then(response =>{
     if (response.ok) {
-      // document.location.replace('/settings');
-      // document.getElementById(`task_history_entry_${task_history_id}`).style.display = "none";
       document.getElementById('task-table').innerHTML+=`
       <tr>
         <th scope="row" class="btn1" type="button">Delete</th>

@@ -49,6 +49,9 @@ button {
 .add-new-task-section {
   display: none;
 }
+.add-new-reward-section {
+  display: none;
+}
 input, textarea {
   border: 0;
   outline: none;
