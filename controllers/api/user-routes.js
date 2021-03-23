@@ -29,6 +29,7 @@ router.get('/:id', (req, res) => {
             return
         }
         res.json(dbUserData)
+        // console.log(dbUserData);
     })
     .catch(err => {
         console.log(err)
@@ -101,6 +102,24 @@ router.put('/:id', (req, res) => {
             id: req.params.id
         }
     })
+    .then(dbUserData => {
+        if (!dbUserData[0]) {
+            res.status(404).json({ message: 'Sorry! No user was found with this id.'})
+            return
+        }
+        res.json(dbUserData)
+    })
+    .catch(err => {
+        console.log(err)
+        res.status(500).json(err)
+    })
+});
+
+router.put('/balance/:id', (req, res) => {
+    User.update(
+        {balance: req.body.balance},
+        {where:{id: req.params.id} }
+    )
     .then(dbUserData => {
         if (!dbUserData[0]) {
             res.status(404).json({ message: 'Sorry! No user was found with this id.'})
