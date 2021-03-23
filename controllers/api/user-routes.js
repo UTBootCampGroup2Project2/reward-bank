@@ -79,14 +79,14 @@ router.post('/', (req, res) => {
 });
 
 //CREATE New Child User
-router.post('/child/:parentId', (req,res) => {
+router.post('/child/', (req,res) => {
     User.create({
         name: req.body.name,
         username: req.body.username,
         password: req.body.password,
         role: 'child',
-        balance: req.body.balance,
-        admin_id: req.params.parentId
+        balance: 0,
+        admin_id: req.session.user_id
     })
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {
