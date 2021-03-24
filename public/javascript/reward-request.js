@@ -34,13 +34,14 @@ async function rewardRequestHandler(event) {
       if (response.ok) {
         document.getElementById(`user_balance`).textContent = user_balance - reward_cost;
 
-        document.getElementById('reward_history_table').innerHTML+=`
+        let tempStr =`
         <tr>
           <th scope="row">${reward_name}</td>
           <td>${reward_cost}</td>
-        </tr>      
-  `;
-      } 
+        </tr>
+  `+ document.getElementById('reward_history_table').innerHTML
+        document.getElementById('reward_history_table').innerHTML = tempStr;
+      }
     })
     .catch(err => {
       console.log(err);
