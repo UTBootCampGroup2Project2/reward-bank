@@ -1,11 +1,11 @@
 async function rewardRequestHandler(event) {
   event.preventDefault();
 
-  const reward_id = parseInt(event.toElement.getAttribute('reward_id'));
+  const reward_id = parseInt(event.target.getAttribute('reward_id'));
   const user_id = parseInt(document.getElementById(`current_user_id`).getAttribute('user_id'));
   const user_balance = parseInt(document.getElementById(`user_balance`).textContent);
   const reward_cost = parseInt(document.getElementById(`reward_cost_${reward_id}`).textContent);
-  const reward_name = event.toElement.getAttribute('reward_name');
+  const reward_name = event.target.getAttribute('reward_name');
 
   console.log(user_id);
   if(user_balance > reward_cost){

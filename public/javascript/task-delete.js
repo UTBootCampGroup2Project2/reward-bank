@@ -9,7 +9,7 @@ async function deleteTaskHandler(event) {
   })
   .then(response =>{
     if (response.ok) {
-      event.toElement.parentNode.remove();
+      event.target.parentNode.remove();
     }
   })
   .catch(err => {

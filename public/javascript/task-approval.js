@@ -1,9 +1,9 @@
 async function taskApprovalHandler(event) {
   event.preventDefault();
 
-  const task_history_id = parseInt(event.toElement.getAttribute('task_history_id'));
-  const completed_by_user_id = parseInt(event.toElement.getAttribute('completed_by_user_id'));
-  const task_value = parseInt(event.toElement.getAttribute('task_value'));
+  const task_history_id = parseInt(event.target.getAttribute('task_history_id'));
+  const completed_by_user_id = parseInt(event.target.getAttribute('completed_by_user_id'));
+  const task_value = parseInt(event.target.getAttribute('task_value'));
   const user_balance = parseInt(document.getElementById(`user_balance_${completed_by_user_id}`).textContent);
 
   if (task_history_id) {

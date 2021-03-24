@@ -1,7 +1,7 @@
 async function taskCompleteHandler(event) {
   event.preventDefault();
 
-  const task_id = parseInt(event.toElement.getAttribute('task_id'));
+  const task_id = parseInt(event.target.getAttribute('task_id'));
 
     fetch(`/api/task-history`, {
       method: 'POST',
