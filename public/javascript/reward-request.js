@@ -5,7 +5,7 @@ async function rewardRequestHandler(event) {
   const user_id = parseInt(document.getElementById(`current_user_id`).getAttribute('user_id'));
   const user_balance = parseInt(document.getElementById(`user_balance`).textContent);
   const reward_cost = parseInt(document.getElementById(`reward_cost_${reward_id}`).textContent);
-
+  const reward_name = event.toElement.getAttribute('reward_name');
 
   console.log(user_id);
   if(user_balance > reward_cost){
@@ -33,6 +33,13 @@ async function rewardRequestHandler(event) {
     .then(response =>{
       if (response.ok) {
         document.getElementById(`user_balance`).textContent = user_balance - reward_cost;
+
+        document.getElementById('reward_history_table').innerHTML+=`
+        <tr>
+          <th scope="row">${reward_name}</td>
+          <td>${reward_cost}</td>
+        </tr>      
+  `;
       } 
     })
     .catch(err => {
