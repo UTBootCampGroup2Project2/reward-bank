@@ -31,7 +31,7 @@ router.post('/', (req, res) => {
     name: req.body.name,
     value: req.body.value,
     status: req.body.status,
-    created_by_user_id: req.body.created_by_user_id
+    created_by_user_id: req.session.user_id
   })
   .then(data => {
     res.json(data)
@@ -45,10 +45,10 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
   Task.update(
     {
-      name: req.body.name,
-      value: req.body.value,
-      status: req.body.status,
-      created_by_user_id: req.body.created_by_user_id
+    name: req.body.name,
+    value: req.body.value,
+    status: req.body.status,
+    created_by_user_id: req.session.user_id
     },
     { where: { id: req.params.id }}
   )

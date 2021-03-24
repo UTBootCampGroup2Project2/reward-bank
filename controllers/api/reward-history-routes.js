@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Reward_History, Reward } = require("../../models");
 const withAuth = require('../../utils/auth');
 
-//Get all task history for a child 
+//Get all reward history for a child 
 router.get('/:childID', (req, res) => {
     Reward_History.findAll({
         attributes: ['id', 'reward_id', 'purchased_by_user_id'],
@@ -33,11 +33,11 @@ router.get('/:childID', (req, res) => {
 })
 
 
-//add new task history
-router.post('/:childId', (req, res) => {
+//add new reward history
+router.post('/', (req, res) => {
     Reward_History.create({
         reward_id: req.body.reward_id,
-        purchased_by_user_id: req.params.childId
+        purchased_by_user_id: req.session.user_id
     })
     .then(dbRewardHistoryData => res.json(dbRewardHistoryData))
     .catch(err => {
@@ -46,7 +46,7 @@ router.post('/:childId', (req, res) => {
     })
 })
 
-//change task history status to complete
+//change reward history status to complete
 router.put('/:rewardHistoryId', (req, res) => {
     Reward_History.update({
         id: req.params.rewardHistoryId,

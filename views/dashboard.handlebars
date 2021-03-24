@@ -1,41 +1,113 @@
-<h1 class="section-banner"><span>Your Dashboard</span></h1>
-<main>
-  <section class="new-post-section">
-    <h2>Create New Post</h2>
-    <form class="new-post-form">
-      <div>
-        <label for="post-title">Title</label>
-        <input type="text" id="post-title" name="post-title" />
-      </div>
-      <div>
-        <label for="post-content">Content</label>
-        <textarea id="post-content" name="post-content" cols="70" rows="5"></textarea>
-      </div>
-      <button type="submit" class="btn">Create</button>
-      <button type="button" class="discard-post-btn">Discard</button>
-    </form>
-  </section>
-  <section class="add-new-post-section">
-    <button type="button" class="create-post-btn">Add New Post</button>
-  </section>
+    <!-- Page Wrapper -->
+    <div id="wrapper">
 
-  {{#if posts.length}}
-  <section class="dashboard-posts">
-    <h2>Your Posts</h2>
-    <ol>
-      {{#each posts as |post|}}
-      <li>
-        {{> dashboard-post-info post}}
-      </li>
-      {{/each}}
-    </ol>
-  </section>
-  {{else}}
-  <section>
-    <h2>You have no posts.</h2>
-  </section>
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- TOPBAR -->
+                <nav class="navbar navbar-expand navbar-light bg-warning topbar static-top shadow">
+                    <!-- Topbar Search -->
+                    <form>
+                       <h3 id="header-name">Welcome {{data.user.name}} </h3>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                      <div class="header-btns align-self-end">
+                        {{#if data.isAdmin}}
+                        <a class=" btn action-2 btn-danger" href="/signup" role="button">Register</a>
+                        <a class=" btn action-2 btn-danger" href="/settings" role="button">Settings</a>
+                        {{/if}}
+                        
+                        {{#if loggedIn}}
+                        <button id="logout" class="btn action-2 btn-danger">logout</button>
+                        {{else}}
+                        <a href="/login">login</a>
+                        {{/if}}
+                     </div>
+                    </ul>
+
+                </nav>
+                <!-- END OF TOPBAR -->
+
+                <!-- PAGE CONTENT -->
+                <div class="container-fluid bg-info">
+                    <br>
+                    <!-- Page Heading -->                    
+                    <h1 class="h3 mb-4 text-gray-800">Lets get started.</h1>
+                    <!-- Current Child Points Card -->
+                    <div class="col-xl-3 col-md-6 mb-4 ">
+                      <div class="card border-left-primary shadow h-100 py-2 border border-warning ">
+                          <div class="card-body ">
+                              <div class="row no-gutters align-items-center">
+                                  <div class="col mr-2">
+                                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 ">
+                                        {{#if data.isAdmin}}
+                                        Your Children's Current Points Balance
+                                        {{else}}
+                                        Your Current Points Balance
+                                        {{/if}}
+                                        
+                                        </div>
+                                      <div class="table-responsive-sm">
+                                        <table class="table">
+                                           <tbody>
+                                                {{#if data.isAdmin}}
+                                                  {{#each data.children as |child|}}
+                                                    {{> dashboard-children-balance child}}
+                                                  {{/each}}
+                                                {{else}}
+                                                  <td id="user_balance">{{data.user.balance}}</td>
+                                                {{/if}}
+
+                                        </table>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  {{#if data.isAdmin}}
+                    {{> dashboard-parent data}}
+                  {{else}}
+                    {{> dashboard-child data}}
+                  {{/if}}
+
+                    
+                </div>
+            </div>
+            <!-- END OF MAIN CONTENT -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Reward Bank 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
+
+{{#if data.isAdmin}}
+  {{#if data.task_history.length}}
+  <script src="/javascript/task-approval.js"></script>
   {{/if}}
+{{else}}
+  <script src="/javascript/task-complete.js"></script>
+  <script src="/javascript/reward-request.js"></script>
+{{/if}}
 
-  <script src="/javascript/add-post.js"></script>
-  <script src="/javascript/discard-post.js"></script>
-</main>

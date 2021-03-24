@@ -1,3 +1,4 @@
+const seedAdminUsers = require('./user-seeds-admin');
 const seedUsers = require('./user-seeds');
 const seedTasks = require('./task-seeds');
 const seedTaskHistory = require('./task-history-seeds');
@@ -9,6 +10,8 @@ const sequelize = require('../config/connection');
 const seedAll = async () => {
   await sequelize.sync({ force: true }).then(() => console.log('\n----- DATABASE SYNCED -----\n'));
 
+  await seedAdminUsers()
+  .then(() => console.log('\n----- ADMIN USERS SEEDED -----\n'));
   await seedUsers()
   .then(() => console.log('\n----- USERS SEEDED -----\n'));
   await seedTasks()

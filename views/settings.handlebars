@@ -1,0 +1,147 @@
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- TOPBAR -->
+                <nav class="navbar navbar-expand navbar-light bg-warning topbar static-top shadow">
+                    <!-- Topbar Search -->
+                    <form>
+                       <h3 id="header-name">Welcome {{data.user.name}} </h3>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                      <div class="header-btns align-self-end">
+                        <a class=" btn action-2 btn-danger" href="/dashboard" role="button">Dashboard</a>
+                        
+                        {{#if loggedIn}}
+                        <button id="logout" class="btn action-2 btn-danger">logout</button>
+                        {{else}}
+                        <a href="/login">login</a>
+                        {{/if}}
+                     </div>
+                    </ul>
+
+                </nav>
+                <!-- END OF TOPBAR -->
+
+                <!-- PAGE CONTENT -->
+                <div class="container-fluid bg-info">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-4 text-gray-800">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h1>
+
+                    
+
+                    <!-- Dropdown Card Example -->
+                    <div class="card shadow mb-4">
+                      <!-- Card Header -->
+                      <div
+                          class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                          <h6 class="m-0 font-weight-bold text-primary">Your Task List</h6>
+                      </div>
+                      <!-- Card Body -->
+                      <div class="card-body">
+                          Dropdown menus can be placed in the card header in order to extend the functionality
+                          of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis
+                          icon in the card header can be clicked on in order to toggle a dropdown menu.
+                        <div class="table-responsive">
+                          <table class="table">  
+                            <tbody id="task-table">
+                                {{#each data.tasks as |task|}}
+                                {{> settings-task task}}
+                                {{/each}}
+                            </tbody>
+                          </table>
+                            <form class="add-new-task-section">
+                                <div>
+                                <label for="new-task-name">Name:</label>
+                                <input type="text" id="new-task-name" />
+                                </div>
+                                <div>
+                                <label for="new-task-value">Value:</label>
+                                <input type="number" id="new-task-value" />
+                                </div>
+                                <div>
+                                <button type="submit" id="add-task-btn" class="btn bg-info action-1 btn-block">Add</button>
+                                </div>
+                            </form>
+                            
+                            
+                            <button type="button" id="create-task-btn" class="btn bg-info action-1 btn-block create-new-task-section">Create New task</button>
+                            <button type="button" id="discard-task-btn" class="btn bg-info action-1 btn-block add-new-task-section">Discard</button>
+                        </div> 
+                      </div> 
+                    </div>
+                     <!-- Dropdown Card Example -->
+                    <div class="card shadow mb-4">
+                      <!-- Card Header -->
+                      <div
+                          class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                          <h6 class="m-0 font-weight-bold text-primary">Your Reward List</h6>
+                      </div>
+                      <!-- Card Body -->
+                      <div class="card-body">
+                          Dropdown menus can be placed in the card header in order to extend the functionality
+                          of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis
+                          icon in the card header can be clicked on in order to toggle a dropdown menu.
+                        <div class="table-responsive">
+                          <table class="table">  
+                            <tbody id="reward-table">
+                                {{#each data.rewards as |reward|}}
+                                {{> settings-reward reward}}
+                                {{/each}}
+                            </tbody>
+                          </table>
+                            <form class="add-new-reward-section">
+                                <div>
+                                <label for="new-reward-name">Name:</label>
+                                <input type="text" id="new-reward-name" />
+                                </div>
+                                <div>
+                                <label for="new-reward-cost">Cost:</label>
+                                <input type="number" id="new-reward-cost" />
+                                </div>
+                                <div>
+                                <button type="submit" id="add-reward-btn" class="btn bg-info action-1 btn-block">Add</button>
+                                </div>
+                            </form>
+                            
+                            
+                            <button type="button" id="create-reward-btn" class="btn bg-info action-1 btn-block create-new-reward-section">Create New reward</button>
+                            <button type="button" id="discard-reward-btn" class="btn bg-info action-1 btn-block add-new-reward-section">Discard</button>
+                        </div> 
+                      </div> 
+                    </div>
+                </div>
+            </div>
+            <!-- END OF MAIN CONTENT -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Reward Bank 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+    <script src="/javascript/task-add.js"></script>
+    <script src="/javascript/task-delete.js"></script>
+    <script src="/javascript/reward-add.js"></script>
+    <script src="/javascript/reward-delete.js"></script>

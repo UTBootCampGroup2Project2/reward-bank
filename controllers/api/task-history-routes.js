@@ -35,10 +35,10 @@ router.get('/:childID', (req, res) => {
 
 
 //add new task history
-router.post('/:childId', (req, res) => {
+router.post('/', (req, res) => {
     Task_History.create({
         task_id: req.body.task_id,
-        completed_by_user_id: req.params.childId,
+        completed_by_user_id: req.session.user_id,
         status: 'pending',
     })
     .then(dbTaskHistoryData => res.json(dbTaskHistoryData))
@@ -51,7 +51,6 @@ router.post('/:childId', (req, res) => {
 //change task history status to complete
 router.put('/:taskHistoryId', (req, res) => {
     Task_History.update({
-        id: req.params.taskHistoryId,
         status: req.body.status
     },
     {

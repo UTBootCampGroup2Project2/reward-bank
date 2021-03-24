@@ -1,0 +1,92 @@
+<!-- Dropdown Card  -->
+<div class="card shadow mb-4">
+  <!-- Card Header -->
+  <div
+      class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+      <h6 class="m-0 font-weight-bold text-primary">Your To-Do List</h6>
+  </div>
+  <!-- Card Body -->
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table">  
+        <tbody>
+            <tr>
+                {{#each tasks as |task|}}
+                  {{> dashboard-to-do-task task}}
+                {{/each}}
+            </tr>
+        </tbody>
+      </table>
+    </div> 
+  </div> 
+</div>
+
+<div class="card shadow mb-4">
+  <!-- Card Header -->
+  <div
+      class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+      <h6 class="m-0 font-weight-bold text-primary">Your Completed Tasks</h6>
+  </div>
+  <!-- Card Body -->
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table">  
+        <tbody>
+            <tr>
+                {{#each task_history as |task_history|}}
+                  {{> dashboard-completed-task task_history}}
+                {{/each}}
+            </tr>
+        </tbody>
+      </table>
+    </div> 
+  </div> 
+</div>
+
+<!-- Dropdown Card Example -->
+<div class="card shadow mb-4">
+  <!-- Card Header -->
+  <div
+      class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+      <h6 class="m-0 font-weight-bold text-primary">Your Rewards List</h6>
+  </div>
+  <!-- Card Body -->
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table">  
+        <tbody>
+            <tr>
+                {{#each rewards as |reward|}}
+                <tr>
+                    {{> dashboard-reward-request reward}}
+                </tr>
+                {{/each}}
+            </tr>
+        </tbody>
+      </table>
+    </div> 
+  </div> 
+</div>
+
+<div class="card shadow mb-4">
+  <!-- Card Header -->
+  <div
+      class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+      <h6 class="m-0 font-weight-bold text-primary">Your Requested Rewards</h6>
+  </div>
+  <!-- Card Body -->
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table">  
+        <tbody id="reward_history_table">
+            <tr>
+                {{#each reward_history as |reward_history|}}
+                  {{> dashboard-requested-reward reward_history}}
+                {{/each}}
+            </tr>
+        </tbody>
+      </table>
+    </div> 
+  </div> 
+</div>
+<div id="current_user_id" user_id="{{user.id}}"></div>
