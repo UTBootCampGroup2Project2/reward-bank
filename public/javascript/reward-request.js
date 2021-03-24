@@ -1,7 +1,7 @@
 async function rewardRequestHandler(event) {
   event.preventDefault();
 
-  const reward_id = event.toElement.getAttribute('reward_id');
+  const reward_id = parseInt(event.toElement.getAttribute('reward_id'));
   const user_id = parseInt(document.getElementById(`current_user_id`).getAttribute('user_id'));
   const user_balance = parseInt(document.getElementById(`user_balance`).textContent);
   const reward_cost = parseInt(document.getElementById(`reward_cost_${reward_id}`).textContent);
