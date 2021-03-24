@@ -1,7 +1,7 @@
 async function taskCompleteHandler(event) {
   event.preventDefault();
 
-  const task_id = event.toElement.getAttribute('task_id');
+  const task_id = parseInt(event.target.getAttribute('task_id'));
 
     fetch(`/api/task-history`, {
       method: 'POST',
@@ -12,8 +12,7 @@ async function taskCompleteHandler(event) {
     })
     .then(response =>{
       if (response.ok) {
-        // document.location.replace('/dashboard');
-        // document.getElementById(`task_history_entry_${task_history_id}`).style.display = "none";
+        alert("Task is now pending!");
       }
     })
     .catch(err => {

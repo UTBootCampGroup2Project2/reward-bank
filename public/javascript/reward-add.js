@@ -23,13 +23,14 @@ async function addRewardHandler(event) {
   })
   .then(response =>{
     if (response.ok) {
-      document.getElementById('reward-table').innerHTML+=`
-      <tr>
-        <th scope="row" class="btn1" type="button">Delete</th>
-        <td>${reward_name}</td>
-        <td>${reward_cost}</td>
-      </tr>      
-`;
+      document.location.replace('/settings');
+//       document.getElementById('reward-table').innerHTML+=`
+//       <tr>
+//         <th scope="row" class="btn1" type="button">Delete</th>
+//         <td>${reward_name}</td>
+//         <td>${reward_cost}</td>
+//       </tr>      
+// `;
     }
   })
   .then(() => {
