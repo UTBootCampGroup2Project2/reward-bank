@@ -1,7 +1,7 @@
 async function deleteRewardHandler(event) {
   event.preventDefault();
   
-  const reward_id = event.toElement.getAttribute('reward_id');
+  const reward_id = parseInt(event.toElement.getAttribute('reward_id'));
 
   fetch(`/api/rewards/${reward_id}`, {
     method: 'DELETE'

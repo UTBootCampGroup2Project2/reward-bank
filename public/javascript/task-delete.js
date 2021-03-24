@@ -1,7 +1,7 @@
 async function deleteTaskHandler(event) {
   event.preventDefault();
   
-  const task_id = event.toElement.getAttribute('task_id');
+  const task_id = parseInt(event.toElement.getAttribute('task_id'));
   
   fetch(`/api/tasks/${task_id}`, {
     method: 'DELETE'
