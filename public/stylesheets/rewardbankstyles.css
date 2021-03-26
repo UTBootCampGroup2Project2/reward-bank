@@ -200,8 +200,9 @@
 }
 
 .signup-card {
-    background-color: var(--red-orange);
-    padding: 25px;
+    background-color: var(--marigold);
+    padding-bottom: 25px;
+    border-radius: 2%;
 }
 
 .signup-card-2 {
@@ -215,4 +216,12 @@
     border-radius: 10px;
     border-color: var(--red-orange);
     
+}
+
+.sign-up-header {
+    color: var(--red-orange);
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase; 
+
 }
