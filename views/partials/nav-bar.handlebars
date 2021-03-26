@@ -1,25 +1,27 @@
                 <!-- TOPBAR -->
-                <nav class="navbar navbar-expand navbar-light bg-warning topbar static-top shadow">
+                <nav class="navbar navbar-expand navbar-light topbar static-top shadow rb-nav">
                     <!-- Topbar Search -->
                     <form>
-                       <h3 id="header-name">Welcome {{data.user.name}} </h3>
+                       <a href="/dashboard">
+                           <img src="/images/reward-bank-logo.png" style="height:75px" alt="Reward Bank logo" href="/">
+                       </a>
                     </form>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
                       <div class="header-btns align-self-end">
                         {{#if data.isAdmin}}
-                        <a class=" btn action-2 btn-danger" href="/signup" role="button">Add a child</a>
+                        <a class=" btn action-2 btn-danger rb-nav-button" href="/signup" role="button">Add a child</a>
                         {{#if this.isDashboard}}
-                        <a class=" btn action-2 btn-danger" href="/settings" role="button">Settings</a>
+                        <a class=" btn action-2 btn-danger rb-nav-button" href="/settings" role="button">Settings</a>
                         {{/if}}
                         {{#if this.isSettings}}
-                        <a class=" btn action-2 btn-danger" href="/dashboard" role="button">Dashboard</a>
+                        <a class=" btn action-2 btn-danger rb-nav-button" href="/dashboard" role="button">Dashboard</a>
                         {{/if}}
                         {{/if}}
                         
                         {{#if loggedIn}}
-                        <button id="logout" class="btn action-2 btn-danger">Logout</button>
+                        <button id="logout" class="btn action-2 btn-danger rb-nav-button">Logout</button>
                         {{else}}
                         <a href="/login">Login</a>
                         {{/if}}

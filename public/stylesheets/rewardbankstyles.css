@@ -1,0 +1,35 @@
+/*BRAND COLOURS*/
+:root {
+    --reward-bank-blue: #1966B0;
+    --red-orange: #ec621e;
+    --marigold: #ffd158;
+    --Turquoise: #73D9F0;
+    --light-grey: #E6E6E6;
+    --medium-grey: #78787A;
+    --charcoal-grey: #373737;
+    --white: #ffffff;
+}
+
+
+/*NAV STYLES*/
+
+.rb-nav {
+    background-color: var(--marigold);
+    color: var(--white);
+}
+
+.rb-nav-button {
+    background-color: var(--red-orange);
+    color: #fff;
+}
+
+.rb-nav-button:hover {
+    background-color: var(--reward-bank-blue);
+}
+
+/* MAIN PAGE CONTENT */
+
+.main-content {
+    background-color: var(--white);
+    color: var(--charcoal-grey);
+}
