@@ -33,3 +33,72 @@
     background-color: var(--white);
     color: var(--charcoal-grey);
 }
+
+/*POINT BALANCE CARD*/
+
+.rb-point-balance {
+    border: #ec621e, solid, 15px;
+}
+
+.rb-point-balance-head {
+    color: var(--reward-bank-blue);
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase; 
+}
+
+/*CARD STYLES*/
+.rb-task-reward-layout {
+    text-transform: capitalize;
+    background-color: var(--white);
+    color: var(--charcoal-grey);
+    border-radius: 15px;
+}
+
+.approve-checkbox {
+    background-color: var(--Turquoise);
+    border-radius: 25;
+    color: var(--white);
+    font-weight: bolder;
+}
+
+
+/*LEFT SIDE CARD STYLES */
+
+.rb-left-side-card {
+    color: var(--white);
+    background-color: var(--red-orange);
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase; 
+}
+
+.rb-left-side-card-cname {
+    background-color: var(--reward-bank-blue);
+    color: #fff;
+    border-radius: 15px;
+}
+
+/* RIGHT SIDE CARD STYLES */
+.rb-right-side-card {
+    color: var(--white);
+    background-color: var(--reward-bank-blue);
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase; 
+}
+
+.rb-right-side-card-cname {
+    background-color: var(--red-orange);
+    color: #fff;
+    border-radius: 15px;
+}
+
+
+/* FOOTER STYLES */
+
+.rb-footer {
+    background-color: var(--marigold);
+    color: var(--reward-bank-blue);
+    font-weight: bolder;
+}

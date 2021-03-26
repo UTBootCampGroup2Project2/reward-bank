@@ -13,17 +13,17 @@
                     <br>
                     <!-- Page Heading -->     
                     <div class="row">       
-                      <div class="col">
+                      <div class="col-6">
                         <h1 class="h3 mb-4 main-content">Welcome {{data.user.name}}! Lets get started.</h1>
                         <p>Ready to see what your children have been up to? See if you have any tasks or rewards to approve. Head over to settings if you want to adjust the tasks and rewards available.</p>
                       </div>
                     <!-- Current Child Points Card -->
-                      <div class="col-xl-3 col-md-6 mb-4 ">
-                        <div class="card border-left-primary shadow h-100 py-2 border border-warning ">
+                      <div class="col-4">
+                        <div class="card border-left-primary shadow h-100 py-2 rb-point-balance">
                           <div class="card-body ">
                               <div class="row no-gutters align-items-center">
                                   <div class="col mr-2">
-                                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 ">
+                                      <div class="rb-point-balance-head">
                                         {{#if data.isAdmin}}
                                         Your Children's Current Points Balance
                                         {{else}}
@@ -62,7 +62,7 @@
             <!-- END OF MAIN CONTENT -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
+            <footer class="sticky-footer rb-footer">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span>Reward Bank 2021</span>
