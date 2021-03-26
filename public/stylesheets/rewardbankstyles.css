@@ -47,19 +47,26 @@
     text-transform: uppercase; 
 }
 
+.rb-child-point-balance {
+    font-weight: bolder;
+    font-size: 50px;
+    text-align: center;
+}
+
 /*CARD STYLES*/
 .rb-task-reward-layout {
     text-transform: capitalize;
     background-color: var(--white);
     color: var(--charcoal-grey);
     border-radius: 15px;
+    text-align: left;
 }
 
-.approve-checkbox {
+.approve-task-btn {
     background-color: var(--Turquoise);
-    border-radius: 25;
-    color: var(--white);
-    font-weight: bolder;
+    border-radius: 10px;
+    color: var(--charcoal-grey);
+    border-color: var(--Turquoise)
 }
 
 
@@ -79,6 +86,41 @@
     border-radius: 15px;
 }
 
+.complete-task-btn {
+    background-color: var(--reward-bank-blue);
+    color: var(--white);
+    border-radius: 10px;
+    border-color: var(--reward-bank-blue);
+}
+
+.delete-task-btn {
+    background-color: var(--reward-bank-blue);
+    color: var(--white);
+    border-radius: 10px;
+    border-color: var(--reward-bank-blue);
+}
+
+.add-task-btn {
+    background-color: var(--reward-bank-blue);
+    color: var(--white);
+    border-radius: 10px;
+    border-color: var(--reward-bank-blue);
+}
+
+.create-new-task-section {
+    background-color: var(--reward-bank-blue);
+    color: var(--white);
+    border-radius: 10px;
+    border-color: var(--reward-bank-blue);
+}
+
+.delete-task-section {
+    background-color: var(--reward-bank-blue);
+    color: var(--white);
+    border-radius: 10px;
+    border-color: var(--reward-bank-blue);
+}
+
 /* RIGHT SIDE CARD STYLES */
 .rb-right-side-card {
     color: var(--white);
@@ -94,11 +136,65 @@
     border-radius: 15px;
 }
 
+.request-reward-btn {
+    background-color: var(--red-orange);
+    color: var(--white);
+    border-radius: 10px;
+    border-color: var(--red-orange);
+}
 
+.delete-reward-btn {
+    background-color: var(--red-orange);
+    color: var(--white);
+    border-radius: 10px;
+    border-color: var(--red-orange);
+}
+
+.add-reward-btn {
+    background-color: var(--red-orange);
+    color: var(--white);
+    border-radius: 10px;
+    border-color: var(--red-orange);
+}
+
+.create-new-reward-section {
+    background-color: var(--red-orange);
+    color: var(--white);
+    border-radius: 10px;
+    border-color: var(--red-orange);
+}
+
+.delete-reward-section {
+    background-color: var(--red-orange);
+    color: var(--white);
+    border-radius: 10px;
+    border-color: var(--red-orange);
+}
 /* FOOTER STYLES */
 
 .rb-footer {
     background-color: var(--marigold);
     color: var(--reward-bank-blue);
     font-weight: bolder;
+}
+
+/* SIGN UP PAGE STYLES */ 
+.signup-page {
+    background-color: var(--reward-bank-blue);
+}
+
+.signup-card {
+    background-color: var(--red-orange);
+}
+
+.signup-card-2 {
+    background-color: var(--white)
+}
+
+.signup-btn {
+    background-color: var(--red-orange);
+    color: var(--white);
+    border-radius: 10px;
+    border-color: var(--red-orange);
+    
 }
