@@ -10,6 +10,21 @@
     --white: #ffffff;
 }
 
+/*DASHBOARD STYLES*/
+
+.rb-dashboard-container {
+    background-color: var(--reward-bank-blue);
+    padding: 30px;
+    height: 100%;
+}
+
+.rb-dashboard-container-2 {
+    background-color: var(--marigold);
+    padding-top: 0px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
 
 /*NAV STYLES*/
 
@@ -181,14 +196,17 @@
 /* SIGN UP PAGE STYLES */ 
 .signup-page {
     background-color: var(--reward-bank-blue);
+    padding: 100px;
 }
 
 .signup-card {
     background-color: var(--red-orange);
+    padding: 25px;
 }
 
 .signup-card-2 {
     background-color: var(--white)
+    
 }
 
 .signup-btn {
