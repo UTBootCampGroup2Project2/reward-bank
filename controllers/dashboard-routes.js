@@ -118,7 +118,7 @@ router.get('/', withAuth, (req, res) => {
    })
    .then(() => {
         // console.log(data);
-        res.render('dashboard', { data, loggedIn: req.session.loggedIn});
+        res.render('dashboard', { data, loggedIn: req.session.loggedIn, isDashboard: true});
    })
    .catch(err => {
         console.log(err);

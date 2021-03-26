@@ -1,0 +1,30 @@
+                <!-- TOPBAR -->
+                <nav class="navbar navbar-expand navbar-light bg-warning topbar static-top shadow">
+                    <!-- Topbar Search -->
+                    <form>
+                       <h3 id="header-name">Welcome {{data.user.name}} </h3>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                      <div class="header-btns align-self-end">
+                        {{#if data.isAdmin}}
+                        <a class=" btn action-2 btn-danger" href="/signup" role="button">Add a child</a>
+                        {{#if this.isDashboard}}
+                        <a class=" btn action-2 btn-danger" href="/settings" role="button">Settings</a>
+                        {{/if}}
+                        {{#if this.isSettings}}
+                        <a class=" btn action-2 btn-danger" href="/dashboard" role="button">Dashboard</a>
+                        {{/if}}
+                        {{/if}}
+                        
+                        {{#if loggedIn}}
+                        <button id="logout" class="btn action-2 btn-danger">Logout</button>
+                        {{else}}
+                        <a href="/login">Login</a>
+                        {{/if}}
+                     </div>
+                    </ul>
+
+                </nav>
+                <!-- END OF TOPBAR -->
