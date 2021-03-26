@@ -10,11 +10,33 @@
     <div class="table-responsive">
       <table class="table">  
         <tbody>
-            <tr>
+            {{!-- <tr> --}}
                 {{#each tasks as |task|}}
                   {{> dashboard-to-do-task task}}
                 {{/each}}
-            </tr>
+            {{!-- </tr> --}}
+        </tbody>
+      </table>
+    </div> 
+  </div> 
+</div>
+
+<div class="card shadow mb-4">
+  <!-- Card Header -->
+  <div
+      class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+      <h6 class="m-0 font-weight-bold text-primary">Your Pending Tasks</h6>
+  </div>
+  <!-- Card Body -->
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table">  
+        <tbody id="pending_task_table">
+            {{!-- <tr> --}}
+                {{#each task_history.pending as |task_history|}}
+                  {{> dashboard-pending-task task_history}}
+                {{/each}}
+            {{!-- </tr> --}}
         </tbody>
       </table>
     </div> 
@@ -33,7 +55,7 @@
       <table class="table">  
         <tbody>
             <tr>
-                {{#each task_history as |task_history|}}
+                {{#each task_history.completed as |task_history|}}
                   {{> dashboard-completed-task task_history}}
                 {{/each}}
             </tr>
