@@ -16,6 +16,7 @@
     background-color: var(--reward-bank-blue);
     padding: 30px;
     height: 100%;
+    border-radius: 2%;
 }
 
 .rb-dashboard-container-2 {
@@ -191,6 +192,7 @@
     background-color: var(--marigold);
     color: var(--reward-bank-blue);
     font-weight: bolder;
+    border-radius: 2%;
 }
 
 /* SIGN UP PAGE STYLES */ 
@@ -202,7 +204,6 @@
 .signup-card {
     background-color: var(--marigold);
     padding-bottom: 25px;
-    border-radius: 2%;
 }
 
 .signup-card-2 {
