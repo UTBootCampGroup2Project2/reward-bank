@@ -13,20 +13,24 @@ router.get('/', withAuth, (req, res) => {
    .then(dbUserData => {
         data.isAdmin = dbUserData.toJSON().admin_id ? false : true;
         if(data.isAdmin){
-            parentData(req, res)
+            return parentData(req, res)
             .then(result => {
                 data = Object.assign(data, result);
+                return data;
             });
         }
         else{
-            childData(req, res)
+            return childData(req, res)
             .then(result => {
                 data = Object.assign(data, result);
+                return data;
+                // console.log(data);
             });
         }
    })
-   .then(() => {
-        // console.log(data);
+   .then((result) => {
+        // console.log(result);
+        data = Object.assign(data, result);
         res.render('dashboard', { data, loggedIn: req.session.loggedIn});
    })
    .catch(err => {
@@ -58,7 +62,7 @@ var parentData = function(req, res) {
 
         return Task_History.findAll({
             where: {completed_by_user_id: children_id_list, status: 'pending'},
-            attributes: ['id', 'completed_by_user_id', 'task_id'],
+            attributes: ['id', 'completed_by_user_id', 'task_id', 'updated_at'],
             include: [{model: User, attributes: ['name']}, {model: Task, attributes: ['name', 'value']}]
         })
         .then(dbData => {
@@ -71,7 +75,7 @@ var parentData = function(req, res) {
 
         return Reward_History.findAll({
             where: {purchased_by_user_id: children_id_list},
-            attributes: ['id', 'reward_id'],
+            attributes: ['id', 'reward_id', 'updated_at'],
             include: [{model: User, attributes: ['name']}, {model: Reward, attributes: ['name']}]
         })
         .then(dbData => {
@@ -110,12 +114,25 @@ var childData = function(req, res) {
     .then(() => {
         // console.log(data.user.admin_id);
         return Task_History.findAll({
-            where: {completed_by_user_id: req.session.user_id, status: 'completed'},
-            attributes: ['id'],
+            where: {completed_by_user_id: req.session.user_id, status: 'pending'},
+            attributes: ['id', 'updated_at'],
             include: [{model: Task, attributes: ['name', 'value']}]
         })
         .then(dbData => {
-            data.task_history = dbData.map(entry => entry.get({ plain: true }));
+            data.task_history = {};
+            data.task_history.pending = dbData.map(entry => entry.get({ plain: true }));
+            // console.log(data.task_history);
+        });
+    })
+    .then(() => {
+        // console.log(data.user.admin_id);
+        return Task_History.findAll({
+            where: {completed_by_user_id: req.session.user_id, status: 'completed'},
+            attributes: ['id', 'updated_at'],
+            include: [{model: Task, attributes: ['name', 'value']}]
+        })
+        .then(dbData => {
+            data.task_history.completed = dbData.map(entry => entry.get({ plain: true }));
             // console.log(data.task_history);
         });
     })
@@ -134,7 +151,7 @@ var childData = function(req, res) {
         // console.log(data.user.admin_id);
         return Reward_History.findAll({
             where: {purchased_by_user_id: req.session.user_id},
-            attributes: ['id'],
+            attributes: ['id', 'updated_at'],
             include: [{model: Reward, attributes: ['name', 'cost']}]
         })
         .then(dbData => {
