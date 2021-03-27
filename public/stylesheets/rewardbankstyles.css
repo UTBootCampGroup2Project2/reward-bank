@@ -113,12 +113,11 @@ input {
     border-color: var(--reward-bank-blue);
 }
 
-.delete-task-btn {
+.delete-task-btn, .edit-task-btn {
     background-color: var(--reward-bank-blue);
     color: var(--white);
     border-radius: 10px;
     border-color: var(--reward-bank-blue);
-    margin-right: 5px;
 }
 
 .add-task-btn {
@@ -172,7 +171,6 @@ input {
     color: var(--white);
     border-radius: 10px;
     border-color: var(--red-orange);
-    margin-right: 5px;
 }
 
 .edit-reward-btn {
@@ -180,7 +178,6 @@ input {
     color: var(--white);
     border-radius: 10px;
     border-color: var(--red-orange);
-    margin-right: 5px;
 }
 
 .add-reward-btn {
@@ -202,10 +199,6 @@ input {
     color: var(--white);
     border-radius: 10px;
     border-color: var(--red-orange);
-}
-
-.settings-button-spacing {
-    justify-content: space-around;
 }
 /* FOOTER STYLES */
 
