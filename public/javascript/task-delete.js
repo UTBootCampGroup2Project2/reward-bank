@@ -1,11 +1,21 @@
 async function deleteTaskHandler(event) {
   event.preventDefault();
   
-  // const task_id = parseInt(event.toElement.getAttribute('task_id'));
   const task_id = parseInt(event.target.getAttribute('task_id'));
-  
+  let contentArray = [];
+
+  event.target.parentNode.querySelectorAll('td').forEach(element => {
+    contentArray.push(element.textContent);
+  });
+
   fetch(`/api/tasks/${task_id}`, {
-    method: 'DELETE'
+    method: 'PUT',
+    body: JSON.stringify({
+      name: contentArray[0],
+      value: parseInt(contentArray[1])||0,
+      status: 'inactive'
+    }),
+    headers: { 'Content-Type': 'application/json' }
   })
   .then(response =>{
     if (response.ok) {

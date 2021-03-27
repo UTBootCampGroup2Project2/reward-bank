@@ -16,7 +16,7 @@ router.get('/', withAuth, (req, res) => {
     })
     .then(() => {
         return Task.findAll({
-            where: {created_by_user_id: data.user.id},
+            where: {created_by_user_id: data.user.id, status: 'active'},
             attributes: ['id', 'name', 'value','status']
         })
     })
@@ -26,7 +26,7 @@ router.get('/', withAuth, (req, res) => {
     })
     .then(() => {
         return Reward.findAll({
-            where: {created_by_user_id: data.user.id},
+            where: {created_by_user_id: data.user.id, status: 'active'},
             attributes: ['id', 'name', 'cost','status']
         })
     })

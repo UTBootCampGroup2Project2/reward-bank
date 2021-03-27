@@ -2,9 +2,19 @@ async function deleteRewardHandler(event) {
   event.preventDefault();
   
   const reward_id = parseInt(event.target.getAttribute('reward_id'));
+  let contentArray = [];
+  
+  event.target.parentNode.querySelectorAll('td').forEach(element => {
+    contentArray.push(element.textContent);
+  });
 
   fetch(`/api/rewards/${reward_id}`, {
-    method: 'DELETE'
+    method: 'PUT',
+    body: JSON.stringify({
+      name: contentArray[0],
+      cost: parseInt(contentArray[1])||0,
+      status: 'inactive'
+    }),
   })
   .then(response =>{
     if (response.ok) {
