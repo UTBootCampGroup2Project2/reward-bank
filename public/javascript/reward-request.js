@@ -8,7 +8,7 @@ async function rewardRequestHandler(event) {
   const reward_name = event.target.getAttribute('reward_name');
 
   console.log(user_id);
-  if(user_balance > reward_cost){
+  if(user_balance >= reward_cost){
     fetch(`/api/reward-history`, {
       method: 'POST',
       body: JSON.stringify({
