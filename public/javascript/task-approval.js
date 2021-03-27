@@ -16,7 +16,6 @@ async function taskApprovalHandler(event) {
     })
     .then(response =>{
       if (response.ok) {
-        // document.location.replace('/dashboard');
         document.getElementById(`task_history_entry_${task_history_id}`).style.display = "none";
       }
     })

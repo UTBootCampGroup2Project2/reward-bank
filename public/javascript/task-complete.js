@@ -14,7 +14,6 @@ async function taskCompleteHandler(event) {
   })
   .then(response =>{
     if (response.ok) {
-      // alert("Task is now pending!");
       let tempStr =`
       <tr class="rb-task-reward-layout">
         <th scope="row">${task_name}</td>

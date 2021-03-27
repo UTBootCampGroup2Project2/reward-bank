@@ -24,7 +24,6 @@ async function signupFormHandler(event) {
       console.log(response);
       alert(response.statusText);
     }
-    // response.ok ? console.log('success') : alert(response.statusText);
   }
 }
 

@@ -8,7 +8,6 @@ async function createTaskHandler(event) {
 async function addTaskHandler(event) {
   event.preventDefault();
 
-  
   const task_name = document.querySelector('#new-task-name').value.trim();
   const task_value = parseInt(document.querySelector('#new-task-value').value.trim());
 

@@ -8,7 +8,6 @@ async function createRewardHandler(event) {
 async function addRewardHandler(event) {
   event.preventDefault();
 
-  
   const reward_name = document.querySelector('#new-reward-name').value.trim();
   const reward_cost = parseInt(document.querySelector('#new-reward-cost').value.trim());
 

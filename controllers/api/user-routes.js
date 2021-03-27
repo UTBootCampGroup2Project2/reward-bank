@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User} = require("../../models");
+const { User } = require("../../models");
 const withAuth = require('../../utils/auth');
 
 // GET all users
@@ -9,10 +9,9 @@ router.get('/', (req, res) => {
     })
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {
-        console.log(err)
-        res.status(500).json(err)
-    })
-
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 // GET one user
@@ -25,17 +24,15 @@ router.get('/:id', (req, res) => {
     })
     .then(dbUserData => {
         if (!dbUserData) {
-            res.status(404).json({ message: 'Sorry! No user was found with this id.'})
-            return
+            res.status(404).json({ message: 'Sorry! No user was found with this id.'});
+            return;
         }
-        res.json(dbUserData)
-        // console.log(dbUserData);
+        res.json(dbUserData);
     })
     .catch(err => {
-        console.log(err)
-        res.status(500).json(err)
-    })
-  
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 
@@ -50,15 +47,15 @@ router.get('/child/:parentId', (req, res) => {
     })
     .then(dbChildData => {
         if (!dbChildData) {
-            res.status(404).json({ message: 'Sorry! No children were associated with this parent/teacher.'})
-            return
+            res.status(404).json({ message: 'Sorry! No children were associated with this parent/teacher.'});
+            return;
         }
-        res.json(dbChildData)
+        res.json(dbChildData);
     })
     .catch(err => {
-        console.log(err)
-        res.status(500).json(err)
-    }) 
+        console.log(err);
+        res.status(500).json(err);
+    }) ;
 });
 
 
@@ -72,18 +69,17 @@ router.post('/', (req, res) => {
     })
     .then(dbUserData => {
         req.session.save(() => {
-            req.session.user_id = dbUserData.id
-            req.session.username = dbUserData.username
-            req.session.loggedIn = true
+            req.session.user_id = dbUserData.id;
+            req.session.username = dbUserData.username;
+            req.session.loggedIn = true;
 
-            res.json({ user: dbUserData, message: 'You are now logged in!'})
-        })
+            res.json({ user: dbUserData, message: 'You are now logged in!'});
+        });
     })
     .catch(err => {
-        console.log(err)
-        res.status(500).json(err)
-    })
-  
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 //CREATE New Child User
@@ -98,9 +94,9 @@ router.post('/child/', (req,res) => {
     })
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {
-        console.log(err)
-        res.status(500).json(err)
-    })
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 //EDIT a user
@@ -112,15 +108,15 @@ router.put('/:id', withAuth, (req, res) => {
     })
     .then(dbUserData => {
         if (!dbUserData[0]) {
-            res.status(404).json({ message: 'Sorry! No user was found with this id.'})
-            return
+            res.status(404).json({ message: 'Sorry! No user was found with this id.'});
+            return;
         }
-        res.json(dbUserData)
+        res.json(dbUserData);
     })
     .catch(err => {
-        console.log(err)
-        res.status(500).json(err)
-    })
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 router.put('/balance/:id', withAuth, (req, res) => {
@@ -130,15 +126,15 @@ router.put('/balance/:id', withAuth, (req, res) => {
     )
     .then(dbUserData => {
         if (!dbUserData[0]) {
-            res.status(404).json({ message: 'Sorry! No user was found with this id.'})
-            return
+            res.status(404).json({ message: 'Sorry! No user was found with this id.'});
+            return;
         }
-        res.json(dbUserData)
+        res.json(dbUserData);
     })
     .catch(err => {
-        console.log(err)
-        res.status(500).json(err)
-    })
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 // DELETE a user
@@ -150,15 +146,15 @@ router.delete('/:id', withAuth, (req, res) => {
   })
   .then(dbUserData => {
       if (!dbUserData) {
-          res.status(404).json({ message: 'Sorry! No user found with this id.'})
-          return
+          res.status(404).json({ message: 'Sorry! No user found with this id.'});
+          return;
       }
-      res.json(dbUserData)
+      res.json(dbUserData);
   })
   .catch(err => {
-      console.log(err)
-      res.status(500).json(err)
-  })
+      console.log(err);
+      res.status(500).json(err);
+  });
 });
 
 //LOGIN Route
@@ -170,24 +166,24 @@ router.post('/login', (req, res) => {
     })
     .then(dbUserData => {
         if (!dbUserData) {
-            res.status(404).json({ message: 'Sorry! No user was found with that username!'})
-            return
+            res.status(404).json({ message: 'Sorry! No user was found with that username!'});
+            return;
         }
 
-        const validPassword = dbUserData.checkPassword(req.body.password)
+        const validPassword = dbUserData.checkPassword(req.body.password);
 
         if (!validPassword) {
-            res.status(400).json({ message: 'Sorry! The password entered was incorrect.'})
-            return
+            res.status(400).json({ message: 'Sorry! The password entered was incorrect.'});
+            return;
         }
 
         req.session.save(() => {
-            req.session.user_id = dbUserData.id
-            req.session.username = dbUserData.username
-            req.session.loggedIn = true
+            req.session.user_id = dbUserData.id;
+            req.session.username = dbUserData.username;
+            req.session.loggedIn = true;
 
-            res.json({ user: dbUserData, message: 'You are now logged in!'})
-        })
+            res.json({ user: dbUserData, message: 'You are now logged in!'});
+        });
     })
   
 });
@@ -196,14 +192,12 @@ router.post('/login', (req, res) => {
 router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {
-            res.status(204).end()
+            res.status(204).end();
         })
     }
     else {
-        res.status(404).end()
+        res.status(404).end();
     }
-    
-  
 });
 
 

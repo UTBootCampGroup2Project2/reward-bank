@@ -1,6 +1,5 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
-const { User, Task, Task_History, Reward, Reward_History } = require('../models');
+const { User, Task, Reward } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
@@ -22,7 +21,6 @@ router.get('/', withAuth, (req, res) => {
     })
     .then(dbTaskData => {
         data.tasks = dbTaskData.map(task => task.get({ plain: true }));
-        // console.log(data.task_history);
     })
     .then(() => {
         return Reward.findAll({
@@ -32,10 +30,8 @@ router.get('/', withAuth, (req, res) => {
     })
     .then(dbRewardData => {
         data.rewards = dbRewardData.map(reward => reward.get({ plain: true }));
-        // console.log(data.rewards);
     })
     .then(() => {
-        // console.log(data);
         res.render('settings', { data, loggedIn: req.session.loggedIn, isSettings: true});
     })
     .catch(err => {

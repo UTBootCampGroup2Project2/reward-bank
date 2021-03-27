@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Reward_History, Reward } = require("../../models");
+const { Reward_History, Reward } = require("../../models");
 const withAuth = require('../../utils/auth');
 
 //Get all reward history for a child 
@@ -20,14 +20,14 @@ router.get('/:childID', (req, res) => {
     })
     .then(dbRewardHistoryData => {
         if (!dbRewardHistoryData) {
-            res.status(404).json({ message: 'Sorry! No task history was found for this user.'})
-            return
+            res.status(404).json({ message: 'Sorry! No task history was found for this user.'});
+            return;
         }
-        res.json(dbRewardHistoryData)
+        res.json(dbRewardHistoryData);
     })
     .catch(err => {
-        console.log(err)
-        res.status(500).json(err)
+        console.log(err);
+        res.status(500).json(err);
     })
   
 })
@@ -41,8 +41,8 @@ router.post('/', withAuth, (req, res) => {
     })
     .then(dbRewardHistoryData => res.json(dbRewardHistoryData))
     .catch(err => {
-        console.log(err)
-        res.status(500).json(err)
+        console.log(err);
+        res.status(500).json(err);
     })
 })
 
@@ -63,8 +63,8 @@ router.put('/:rewardHistoryId', withAuth, (req, res) => {
     .then(dbRewardHistoryData => res.json(dbRewardHistoryData))
     .catch(err => {
         console.log(err)
-        res.status(500).json(err)
-    })
+        res.status(500).json(err);
+    });
 })
 
 //delete task history
@@ -76,15 +76,15 @@ router.delete('/:id', withAuth, (req, res) => {
     })
     .then(dbRewardHistoryData => {
         if (!dbRewardHistoryData) {
-            res.status(404).json({ message: 'Sorry! No task history was found with this id.'})
-            return
+            res.status(404).json({ message: 'Sorry! No task history was found with this id.'});
+            return;
         }
-        res.json(dbRewardHistoryData)
+        res.json(dbRewardHistoryData);
     })
     .catch(err => {
-        console.log(err)
-        res.status(500).json(err)
-    })
+        console.log(err);
+        res.status(500).json(err);
+    });
   });
 
   module.exports = router;
