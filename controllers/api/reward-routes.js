@@ -47,7 +47,7 @@ router.put('/:id', withAuth, (req, res) => {
   Reward.update(
     {
     name: req.body.name,
-    cost: req.body.value,
+    cost: req.body.cost,
     status: req.body.status,
     created_by_user_id: req.session.user_id
     },
