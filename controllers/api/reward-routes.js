@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Reward } = require("../../models");
+const withAuth = require('../../utils/auth');
 
 // GET all: /api/rewards
 router.get('/', (req, res) => {
@@ -26,7 +27,7 @@ router.get('/:id', (req, res) => {
 });
 
 // POST /api/rewards
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
   Reward.create({
     name: req.body.name,
     cost: req.body.cost,
@@ -42,7 +43,7 @@ router.post('/', (req, res) => {
 });
 
 // PUT one: /api/rewards/1
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
   Reward.update(
     {
     name: req.body.name,
@@ -61,7 +62,7 @@ router.put('/:id', (req, res) => {
 });
 
 // DELETE one: /api/rewards/1
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
   Reward.destroy({ where:
     { id: req.params.id }
   })

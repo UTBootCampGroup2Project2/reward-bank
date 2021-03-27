@@ -23,6 +23,7 @@
   </div> 
 </div>
 </div>
+
 <div class="col">
 <!-- Dropdown Card Example -->
 <div class="card shadow mb-4 rb-right-side-card">
@@ -57,24 +58,24 @@
   <!-- Card Header -->
   <div
       class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-      <h6 class="m-0 font-weight-bold">Your Completed Tasks</h6>
+      <h6 class="m-0 font-weight-bold">Your Pending Tasks</h6>
   </div>
   <!-- Card Body -->
   <div class="card-body">
     <div class="table-responsive">
       <table class="table">  
-        <tbody>
-            <tr>
-                {{#each task_history as |task_history|}}
-                  {{> dashboard-completed-task task_history}}
+        <tbody id="pending_task_table">
+            {{!-- <tr> --}}
+                {{#each task_history.pending as |task_history|}}
+                  {{> dashboard-pending-task task_history}}
                 {{/each}}
-            </tr>
+            {{!-- </tr> --}}
         </tbody>
       </table>
     </div> 
   </div> 
 </div>
-</div>
+
 <div class="col">
 <div class="card shadow mb-4 rb-right-side-card">
   <!-- Card Header -->
@@ -99,4 +100,31 @@
 </div>
 </div>
 </div>
+
+
+<div class="row" style="margin: 10px">
+  <div class="col">
+<div class="card shadow mb-4 rb-left-side-card">
+  <!-- Card Header -->
+  <div
+      class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+      <h6 class="m-0 font-weight-bold">Your Completed Tasks</h6>
+  </div>
+  <!-- Card Body -->
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table">  
+        <tbody>
+            <tr>
+                {{#each task_history.completed as |task_history|}}
+                  {{> dashboard-completed-task task_history}}
+                {{/each}}
+            </tr>
+        </tbody>
+      </table>
+    </div> 
+  </div> 
+</div>
+</div>
+
 <div id="current_user_id" user_id="{{user.id}}"></div>

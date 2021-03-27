@@ -34,7 +34,7 @@ router.get('/:childID', (req, res) => {
 
 
 //add new reward history
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Reward_History.create({
         reward_id: req.body.reward_id,
         purchased_by_user_id: req.session.user_id
@@ -47,7 +47,7 @@ router.post('/', (req, res) => {
 })
 
 //change reward history status to complete
-router.put('/:rewardHistoryId', (req, res) => {
+router.put('/:rewardHistoryId', withAuth, (req, res) => {
     Reward_History.update({
         id: req.params.rewardHistoryId,
         reward_id: req.body.reward_id,
@@ -68,7 +68,7 @@ router.put('/:rewardHistoryId', (req, res) => {
 })
 
 //delete task history
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Reward_History.destroy({
         where: {
             id: req.params.id

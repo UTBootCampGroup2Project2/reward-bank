@@ -35,7 +35,7 @@ router.get('/:childID', (req, res) => {
 
 
 //add new task history
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Task_History.create({
         task_id: req.body.task_id,
         completed_by_user_id: req.session.user_id,
@@ -49,7 +49,7 @@ router.post('/', (req, res) => {
 })
 
 //change task history status to complete
-router.put('/:taskHistoryId', (req, res) => {
+router.put('/:taskHistoryId', withAuth, (req, res) => {
     Task_History.update({
         status: req.body.status
     },
@@ -67,7 +67,7 @@ router.put('/:taskHistoryId', (req, res) => {
 })
 
 //delete task history
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Task_History.destroy({
         where: {
             id: req.params.id

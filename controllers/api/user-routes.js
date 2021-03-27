@@ -104,7 +104,7 @@ router.post('/child/', (req,res) => {
 });
 
 //EDIT a user
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     User.update(req.body, {
         where: {
             id: req.params.id
@@ -123,7 +123,7 @@ router.put('/:id', (req, res) => {
     })
 });
 
-router.put('/balance/:id', (req, res) => {
+router.put('/balance/:id', withAuth, (req, res) => {
     User.update(
         {balance: req.body.balance},
         {where:{id: req.params.id} }
@@ -142,7 +142,7 @@ router.put('/balance/:id', (req, res) => {
 });
 
 // DELETE a user
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
   User.destroy({
       where: {
           id: req.params.id
