@@ -10,6 +10,10 @@
     --white: #ffffff;
 }
 
+input {
+    background-color: var(--white);
+}
+
 /*DASHBOARD STYLES*/
 
 .rb-dashboard-container {
@@ -134,6 +138,9 @@
     color: var(--white);
     border-radius: 10px;
     border-color: var(--reward-bank-blue);
+}
+.rb-add-new-task-section {
+    background-color: var(--white);
 }
 
 /* RIGHT SIDE CARD STYLES */
