@@ -12,29 +12,35 @@ async function addTaskHandler(event) {
   const task_name = document.querySelector('#new-task-name').value.trim();
   const task_value = parseInt(document.querySelector('#new-task-value').value.trim());
 
-  fetch(`/api/tasks`, {
-    method: 'POST',
-    body: JSON.stringify({
-      name: task_name,
-      value: task_value,
-      status: 'active'
-    }),
-    headers: { 'Content-Type': 'application/json' }
-  })
-  .then(response =>{
-    if (response.ok) {
-      document.location.reload();
-    }
-  })
-  .then(() => {
-    document.querySelector('#new-task-name').value = "";
-    document.querySelector('#new-task-value').value = "";
-    document.querySelectorAll('.create-new-task-section').forEach(element => element.style.display = "unset");
-    document.querySelectorAll('.add-new-task-section').forEach(element => element.style.display = "none");
-  })
-  .catch(err => {
-    console.log(err);
-  });
+  if(task_name && task_value){
+    fetch(`/api/tasks`, {
+      method: 'POST',
+      body: JSON.stringify({
+        name: task_name,
+        value: task_value,
+        status: 'active'
+      }),
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then(response =>{
+      if (response.ok) {
+        document.location.reload();
+      }
+    })
+    .then(() => {
+      document.querySelector('#new-task-name').value = "";
+      document.querySelector('#new-task-value').value = "";
+      document.querySelectorAll('.create-new-task-section').forEach(element => element.style.display = "unset");
+      document.querySelectorAll('.add-new-task-section').forEach(element => element.style.display = "none");
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }
+  else{
+    alert('Missing information!');
+  }
+
 }
 
 async function discardTaskHandler(event) {

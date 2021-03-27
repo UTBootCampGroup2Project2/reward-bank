@@ -35,27 +35,35 @@ async function editRewardHandler(event) {
         event.target.parentNode.querySelector('td').focus();
       break;
     case 'confirm':
-      event.target.parentNode.querySelectorAll('td').forEach(element => {
-        element.setAttribute('contenteditable', false);
-        element.classList.remove('edit-mode');
-        event.target.textContent = 'Edit';
-        contentArray.push(element.textContent);
-      });
+      if(event.target.parentNode.querySelectorAll('td')[0].textContent != ""){
+        event.target.parentNode.querySelectorAll('td').forEach(element => {
+          element.setAttribute('contenteditable', false);
+          element.classList.remove('edit-mode');
+          event.target.textContent = 'Edit';
+          contentArray.push(element.textContent);
+        });
 
-      event.target.parentNode.querySelectorAll('td')[1].textContent = parseInt(contentArray[1]);
+        event.target.parentNode.querySelectorAll('td')[1].textContent = parseInt(contentArray[1])||0;
 
-      fetch(`/api/rewards/${reward_id}`, {
-        method: 'PUT',
-        body: JSON.stringify({
-          name: contentArray[0],
-          cost: parseInt(contentArray[1]),
-          status: 'active'
-        }),
-        headers: { 'Content-Type': 'application/json' }
-      })
-      .catch(err => {
-        console.log(err);
-      });
+        fetch(`/api/rewards/${reward_id}`, {
+          method: 'PUT',
+          body: JSON.stringify({
+            name: contentArray[0],
+            cost: parseInt(contentArray[1])||0,
+            status: 'active'
+          }),
+          headers: { 'Content-Type': 'application/json' }
+        })
+        .catch(err => {
+          console.log(err);
+        });
+      }
+      else{
+        if(event.target.parentNode.querySelectorAll('td')[0].textContent == ""){
+          alert('Please enter a reward!');
+        }
+      }
+
       break;
     default:
       console.log("Edit button error");
