@@ -43,11 +43,13 @@ async function editTaskHandler(event) {
         contentArray.push(element.textContent);
       });
 
+      event.target.parentNode.querySelectorAll('td')[1].textContent = parseInt(contentArray[1]);
+      
       fetch(`/api/tasks/${task_id}`, {
         method: 'PUT',
         body: JSON.stringify({
           name: contentArray[0],
-          value: contentArray[1],
+          value: parseInt(contentArray[1]),
           status: 'active'
         }),
         headers: { 'Content-Type': 'application/json' }

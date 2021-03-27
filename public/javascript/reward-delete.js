@@ -42,11 +42,13 @@ async function editRewardHandler(event) {
         contentArray.push(element.textContent);
       });
 
+      event.target.parentNode.querySelectorAll('td')[1].textContent = parseInt(contentArray[1]);
+
       fetch(`/api/rewards/${reward_id}`, {
         method: 'PUT',
         body: JSON.stringify({
           name: contentArray[0],
-          cost: contentArray[1],
+          cost: parseInt(contentArray[1]),
           status: 'active'
         }),
         headers: { 'Content-Type': 'application/json' }
@@ -56,6 +58,7 @@ async function editRewardHandler(event) {
       });
       break;
     default:
+      console.log("Edit button error");
       break;
   }
 }
