@@ -117,7 +117,6 @@ input {
     color: var(--white);
     border-radius: 10px;
     border-color: var(--reward-bank-blue);
-    margin-right: 5px;
 }
 
 .add-task-btn {
@@ -201,10 +200,6 @@ input {
     color: var(--white);
     border-radius: 10px;
     border-color: var(--red-orange);
-}
-
-.settings-button-spacing {
-    justify-content: space-around;
 }
 /* FOOTER STYLES */
 
