@@ -35,7 +35,7 @@ async function rewardRequestHandler(event) {
         document.getElementById(`user_balance`).textContent = user_balance - reward_cost;
         document.getElementById(`user_balance`).textContent += ' points';
         let tempStr =`
-        <tr>
+        <tr class="rb-task-reward-layout">
           <th scope="row">${reward_name}</td>
           <td>${reward_cost}</td>
         </tr>
