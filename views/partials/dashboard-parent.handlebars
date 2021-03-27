@@ -12,11 +12,9 @@
     <div class="table-responsive">
       <table class="table">  
         <tbody>
-            <tr>
                 {{#each task_history as |task_history|}}
                   {{> dashboard-task-approval task_history}}
                 {{/each}}
-            </tr>
         </tbody>
       </table>
     </div> 
@@ -36,13 +34,9 @@
     <div class="table-responsive">
       <table class="table">  
         <tbody>
-            <tr>
-                {{#each reward_history as |reward_history|}}
-                <tr>
-                    {{> dashboard-reward-history reward_history}}
-                </tr>
-                {{/each}}
-            </tr>
+          {{#each reward_history as |reward_history|}}
+              {{> dashboard-reward-history reward_history}}
+          {{/each}}
         </tbody>
       </table>
     </div> 
