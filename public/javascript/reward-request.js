@@ -33,7 +33,7 @@ async function rewardRequestHandler(event) {
     .then(response =>{
       if (response.ok) {
         document.getElementById(`user_balance`).textContent = user_balance - reward_cost;
-
+        document.getElementById(`user_balance`).textContent += ' points';
         let tempStr =`
         <tr>
           <th scope="row">${reward_name}</td>
