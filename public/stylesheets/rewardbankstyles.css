@@ -112,7 +112,7 @@ input {
     border-color: var(--reward-bank-blue);
 }
 
-.delete-task-btn {
+.delete-task-btn, .edit-task-btn {
     background-color: var(--reward-bank-blue);
     color: var(--white);
     border-radius: 10px;
@@ -170,7 +170,6 @@ input {
     color: var(--white);
     border-radius: 10px;
     border-color: var(--red-orange);
-    margin-right: 5px;
 }
 
 .edit-reward-btn {
@@ -178,7 +177,6 @@ input {
     color: var(--white);
     border-radius: 10px;
     border-color: var(--red-orange);
-    margin-right: 5px;
 }
 
 .add-reward-btn {
