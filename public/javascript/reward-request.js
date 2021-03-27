@@ -18,8 +18,6 @@ async function rewardRequestHandler(event) {
     })
     .then(response =>{
       if (response.ok) {
-        // document.location.replace('/dashboard');
-        // document.getElementById(`task_history_entry_${task_history_id}`).style.display = "none";
 
       }
     })
@@ -35,7 +33,7 @@ async function rewardRequestHandler(event) {
         document.getElementById(`user_balance`).textContent = user_balance - reward_cost;
         document.getElementById(`user_balance`).textContent += ' points';
         let tempStr =`
-        <tr>
+        <tr class="rb-task-reward-layout">
           <th scope="row">${reward_name}</td>
           <td>${reward_cost}</td>
         </tr>
