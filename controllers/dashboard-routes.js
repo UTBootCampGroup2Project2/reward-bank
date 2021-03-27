@@ -28,10 +28,9 @@ router.get('/', withAuth, (req, res) => {
             });
         }
    })
-   .then((result) => {
-        // console.log(result);
-        data = Object.assign(data, result);
-        res.render('dashboard', { data, loggedIn: req.session.loggedIn});
+   .then(() => {
+        // console.log(data);
+        res.render('dashboard', { data, loggedIn: req.session.loggedIn, isDashboard: true});
    })
    .catch(err => {
         console.log(err);

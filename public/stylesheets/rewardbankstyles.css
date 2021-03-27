@@ -1,0 +1,248 @@
+/*BRAND COLOURS*/
+:root {
+    --reward-bank-blue: #1966B0;
+    --red-orange: #ec621e;
+    --marigold: #ffd158;
+    --Turquoise: #73D9F0;
+    --light-grey: #E6E6E6;
+    --medium-grey: #78787A;
+    --charcoal-grey: #373737;
+    --white: #ffffff;
+}
+
+input {
+    background-color: var(--white);
+}
+
+/*DASHBOARD STYLES*/
+
+.rb-dashboard-container {
+    background-color: var(--reward-bank-blue);
+    padding: 30px;
+    height: 100%;
+}
+
+.rb-dashboard-container-2 {
+    background-color: var(--marigold);
+    padding-top: 0px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/*NAV STYLES*/
+
+.rb-nav {
+    background-color: var(--marigold);
+    color: var(--white);
+}
+
+.rb-nav-button {
+    background-color: var(--red-orange);
+    color: #fff;
+}
+
+.rb-nav-button:hover {
+    background-color: var(--reward-bank-blue);
+}
+
+/* MAIN PAGE CONTENT */
+
+.main-content {
+    background-color: var(--white);
+    color: var(--charcoal-grey);
+}
+
+/*POINT BALANCE CARD*/
+
+.rb-point-balance {
+    border: #ec621e, solid, 15px;
+}
+
+.rb-point-balance-head {
+    color: var(--reward-bank-blue);
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase; 
+}
+
+.rb-child-point-balance {
+    font-weight: bolder;
+    font-size: 50px;
+    text-align: center;
+}
+
+/*CARD STYLES*/
+.rb-task-reward-layout {
+    text-transform: capitalize;
+    background-color: var(--white);
+    color: var(--charcoal-grey);
+    border-radius: 15px;
+    text-align: left;
+}
+
+.approve-task-btn {
+    background-color: var(--Turquoise);
+    border-radius: 10px;
+    color: var(--charcoal-grey);
+    border-color: var(--Turquoise)
+}
+
+
+/*LEFT SIDE CARD STYLES */
+
+.rb-left-side-card {
+    color: var(--white);
+    background-color: var(--red-orange);
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase; 
+}
+
+.rb-left-side-card-cname {
+    background-color: var(--reward-bank-blue);
+    color: #fff;
+    border-radius: 15px;
+}
+
+.complete-task-btn {
+    background-color: var(--reward-bank-blue);
+    color: var(--white);
+    border-radius: 10px;
+    border-color: var(--reward-bank-blue);
+}
+
+.delete-task-btn {
+    background-color: var(--reward-bank-blue);
+    color: var(--white);
+    border-radius: 10px;
+    border-color: var(--reward-bank-blue);
+    margin-right: 5px;
+}
+
+.add-task-btn {
+    background-color: var(--reward-bank-blue);
+    color: var(--white);
+    border-radius: 10px;
+    border-color: var(--reward-bank-blue);
+}
+
+.create-new-task-section {
+    background-color: var(--reward-bank-blue);
+    color: var(--white);
+    border-radius: 10px;
+    border-color: var(--reward-bank-blue);
+}
+
+.delete-task-section {
+    background-color: var(--reward-bank-blue);
+    color: var(--white);
+    border-radius: 10px;
+    border-color: var(--reward-bank-blue);
+}
+.rb-add-new-task-section {
+    background-color: var(--white);
+}
+
+/* RIGHT SIDE CARD STYLES */
+.rb-right-side-card {
+    color: var(--white);
+    background-color: var(--reward-bank-blue);
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase; 
+}
+
+.rb-right-side-card-cname {
+    background-color: var(--red-orange);
+    color: #fff;
+    border-radius: 15px;
+}
+
+.request-reward-btn {
+    background-color: var(--red-orange);
+    color: var(--white);
+    border-radius: 10px;
+    border-color: var(--red-orange);
+}
+
+.delete-reward-btn {
+    background-color: var(--red-orange);
+    color: var(--white);
+    border-radius: 10px;
+    border-color: var(--red-orange);
+    margin-right: 5px;
+}
+
+.edit-reward-btn {
+    background-color: var(--red-orange);
+    color: var(--white);
+    border-radius: 10px;
+    border-color: var(--red-orange);
+    margin-right: 5px;
+}
+
+.add-reward-btn {
+    background-color: var(--red-orange);
+    color: var(--white);
+    border-radius: 10px;
+    border-color: var(--red-orange);
+}
+
+.create-new-reward-section {
+    background-color: var(--red-orange);
+    color: var(--white);
+    border-radius: 10px;
+    border-color: var(--red-orange);
+}
+
+.delete-reward-section {
+    background-color: var(--red-orange);
+    color: var(--white);
+    border-radius: 10px;
+    border-color: var(--red-orange);
+}
+
+.settings-button-spacing {
+    justify-content: space-around;
+}
+/* FOOTER STYLES */
+
+.rb-footer {
+    background-color: var(--marigold);
+    color: var(--reward-bank-blue);
+    font-weight: bolder;
+    border-radius: 2%;
+}
+
+/* SIGN UP PAGE STYLES */ 
+.signup-page {
+    background-color: var(--reward-bank-blue);
+    padding: 100px;
+}
+
+.signup-card {
+    background-color: var(--marigold);
+    padding-bottom: 25px;
+}
+
+.signup-card-2 {
+    background-color: var(--white)
+    
+}
+
+.signup-btn {
+    background-color: var(--red-orange);
+    color: var(--white);
+    border-radius: 10px;
+    border-color: var(--red-orange);
+    
+}
+
+.sign-up-header {
+    color: var(--red-orange);
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase; 
+
+}

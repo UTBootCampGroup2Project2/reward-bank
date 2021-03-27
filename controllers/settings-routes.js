@@ -36,7 +36,7 @@ router.get('/', withAuth, (req, res) => {
     })
     .then(() => {
         console.log(data);
-        res.render('settings', { data, loggedIn: req.session.loggedIn});
+        res.render('settings', { data, loggedIn: req.session.loggedIn, isSettings: true});
     })
     .catch(err => {
         console.log(err);

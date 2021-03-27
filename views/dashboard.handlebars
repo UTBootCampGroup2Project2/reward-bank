@@ -1,50 +1,33 @@
     <!-- Page Wrapper -->
-    <div id="wrapper">
+    <div id="wrapper" class="rb-dashboard-container">
 
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content-wrapper" class="d-flex flex-column ">
 
             <!-- Main Content -->
-            <div id="content">
+            <div id="content" class="rb-dashboard-container-2">
 
-                <!-- TOPBAR -->
-                <nav class="navbar navbar-expand navbar-light bg-warning topbar static-top shadow">
-                    <!-- Topbar Search -->
-                    <form>
-                       <h3 id="header-name">Welcome {{data.user.name}} </h3>
-                    </form>
-
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                      <div class="header-btns align-self-end">
-                        {{#if data.isAdmin}}
-                        <a class=" btn action-2 btn-danger" href="/signup" role="button">Register</a>
-                        <a class=" btn action-2 btn-danger" href="/settings" role="button">Settings</a>
-                        {{/if}}
-                        
-                        {{#if loggedIn}}
-                        <button id="logout" class="btn action-2 btn-danger">logout</button>
-                        {{else}}
-                        <a href="/login">login</a>
-                        {{/if}}
-                     </div>
-                    </ul>
-
-                </nav>
-                <!-- END OF TOPBAR -->
-
+              {{> nav-bar this}}
                 <!-- PAGE CONTENT -->
-                <div class="container-fluid bg-info">
+                <div class="container-fluid main-content">
                     <br>
-                    <!-- Page Heading -->                    
-                    <h1 class="h3 mb-4 text-gray-800">Lets get started.</h1>
+                    <!-- Page Heading -->     
+                    <div class="row">       
+                      <div class="col-6">
+                        <h1 class="h3 mb-4 main-content">Welcome {{data.user.name}}! Lets get started.</h1>
+                        {{#if data.isAdmin}}
+                        <p>Ready to see what your children have been up to? See if you have any tasks or rewards to approve. Head over to settings if you want to adjust the tasks and rewards available.</p>
+                        {{else}}
+                        <p>Ready to see what tasks you have on your to-do list today? See if you have enough points to claim a reward.</p>
+                        {{/if}}
+                      </div>
                     <!-- Current Child Points Card -->
-                    <div class="col-xl-3 col-md-6 mb-4 ">
-                      <div class="card border-left-primary shadow h-100 py-2 border border-warning ">
+                      <div class="col-4">
+                        <div class="card border-left-primary shadow h-100 py-2 rb-point-balance">
                           <div class="card-body ">
                               <div class="row no-gutters align-items-center">
                                   <div class="col mr-2">
-                                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 ">
+                                      <div class="rb-point-balance-head">
                                         {{#if data.isAdmin}}
                                         Your Children's Current Points Balance
                                         {{else}}
@@ -60,7 +43,7 @@
                                                     {{> dashboard-children-balance child}}
                                                   {{/each}}
                                                 {{else}}
-                                                  <td id="user_balance">{{data.user.balance}}</td>
+                                                  <td class="rb-child-point-balance" id="user_balance">{{data.user.balance}} points</td>
                                                 {{/if}}
 
                                         </table>
@@ -69,8 +52,8 @@
                               </div>
                           </div>
                       </div>
+                      </div>
                   </div>
-
                   {{#if data.isAdmin}}
                     {{> dashboard-parent data}}
                   {{else}}
@@ -83,7 +66,7 @@
             <!-- END OF MAIN CONTENT -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
+            <footer class="sticky-footer rb-footer">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span>Reward Bank 2021</span>
