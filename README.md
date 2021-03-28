@@ -14,6 +14,7 @@ Table of Contents |
 [Installation](#Installation)
 [Usage](#Usage)
 [License](#License)
+[Screenshots](#Screenshots)
 [Contributing](#Contributing)
 [Authors](#Authors)
 [Questions](#Questions)
@@ -49,8 +50,13 @@ Video Walkthrough: [Video Link](https://drive.google.com/file/d/1qJ_XK1nsTOKhVRz
 
 Repo Link: [Repo Link](https://github.com/UTBootCampGroup2Project2/reward-bank)
 
+<br />
 
-<!-- Insert image/gif of image or link to videowalkthrough -->
+## Screenshots
+
+![Dashboard](assets\images\rocky-dawn-18669.herokuapp.com_dashboard_.png)
+
+![Settings](assets\images\rocky-dawn-18669.herokuapp.com_settings.png)
 
 <br />
 
