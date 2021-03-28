@@ -1,14 +1,14 @@
                 <!-- TOPBAR -->
-                <nav class="navbar navbar-expand navbar-light topbar static-top rb-nav">
+                <nav class="navbar navbar-expand navbar-light topbar static-top rb-nav flex-container">
                     <!-- Topbar Search -->
-                    <form>
+                    <form class="flex-item">
                        <a href="/dashboard">
                            <img src="/images/reward-bank-logo.png" style="height:75px" alt="Reward Bank logo" href="/">
                        </a>
                     </form>
 
                     <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto flex-item">
                       <div class="header-btns align-self-end">
                         {{#if data.isAdmin}}
                         <a class=" btn action-2 btn-danger rb-nav-button" href="/signup" role="button">Add a child</a>
