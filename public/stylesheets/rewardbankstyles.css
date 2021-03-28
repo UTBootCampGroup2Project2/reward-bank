@@ -240,3 +240,35 @@ input {
     text-transform: uppercase; 
 
 }
+
+.flex-container {
+    display: flex;
+}
+
+@media (max-width: 767.98px) {
+    .rb-dashboard-container {
+        padding: 10px;
+    }
+    
+    .rb-dashboard-container-2 {
+        padding-top: 0px;
+        padding-bottom: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .signup-page {
+        padding: 10px;
+    }
+
+    
+}
+
+@media screen and (max-width: 820px) {
+    .navbar, .navbar-nav {
+      display: inline-block;
+      justify-content: center;
+      text-align: center;
+    }
+}
+
