@@ -54,9 +54,9 @@ Repo Link: [Repo Link](https://github.com/UTBootCampGroup2Project2/reward-bank)
 
 ## Screenshots
 
-![Dashboard](assets\images\rocky-dawn-18669.herokuapp.com_dashboard_.png)
+![Dashboard](./assets/images/rocky-dawn-18669.herokuapp.com_dashboard_.png)
 
-![Settings](assets\images\rocky-dawn-18669.herokuapp.com_settings.png)
+![Settings](./assets/images/rocky-dawn-18669.herokuapp.com_settings.png)
 
 <br />
 
