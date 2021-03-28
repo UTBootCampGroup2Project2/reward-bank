@@ -15,14 +15,12 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.replace('/dashboard/')
+      document.location.replace('/dashboard/');
     } else {
       console.log(response);
       alert(response.statusText);
     }
   }
 }
-
-
 
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);

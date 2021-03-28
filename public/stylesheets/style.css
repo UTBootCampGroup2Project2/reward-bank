@@ -482,6 +482,10 @@ span.option-br {
   color: white;
 }
 
+.btn1:hover {
+  color: black;
+}
+
 .header-btns {
   padding: 10px  20px;
 }

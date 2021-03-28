@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Task_History, Task } = require("../../models");
+const { Task_History, Task } = require("../../models");
 const withAuth = require('../../utils/auth');
 
 //Get all task history for a child 
@@ -21,21 +21,20 @@ router.get('/:childID', (req, res) => {
     .then(dbTaskHistoryData => {
         console.log(dbTaskHistoryData)
         if (!dbTaskHistoryData) {
-            res.status(404).json({ message: 'Sorry! No task history was found for this user.'})
-            return
+            res.status(404).json({ message: 'Sorry! No task history was found for this user.'});
+            return;
         }
-        res.json(dbTaskHistoryData)
+        res.json(dbTaskHistoryData);
     })
     .catch(err => {
-        console.log(err)
-        res.status(500).json(err)
+        console.log(err);
+        res.status(500).json(err);
     })
-  
 })
 
 
 //add new task history
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Task_History.create({
         task_id: req.body.task_id,
         completed_by_user_id: req.session.user_id,
@@ -43,13 +42,13 @@ router.post('/', (req, res) => {
     })
     .then(dbTaskHistoryData => res.json(dbTaskHistoryData))
     .catch(err => {
-        console.log(err)
-        res.status(500).json(err)
+        console.log(err);
+        res.status(500).json(err);
     })
 })
 
 //change task history status to complete
-router.put('/:taskHistoryId', (req, res) => {
+router.put('/:taskHistoryId', withAuth, (req, res) => {
     Task_History.update({
         status: req.body.status
     },
@@ -61,13 +60,13 @@ router.put('/:taskHistoryId', (req, res) => {
     )
     .then(dbTaskHistoryData => res.json(dbTaskHistoryData))
     .catch(err => {
-        console.log(err)
-        res.status(500).json(err)
+        console.log(err);
+        res.status(500).json(err);
     })
 })
 
 //delete task history
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Task_History.destroy({
         where: {
             id: req.params.id
@@ -75,14 +74,14 @@ router.delete('/:id', (req, res) => {
     })
     .then(dbTaskHistoryData => {
         if (!dbTaskHistoryData) {
-            res.status(404).json({ message: 'Sorry! No task history was found with this id.'})
-            return
+            res.status(404).json({ message: 'Sorry! No task history was found with this id.'});
+            return;
         }
-        res.json(dbTaskHistoryData)
+        res.json(dbTaskHistoryData);
     })
     .catch(err => {
-        console.log(err)
-        res.status(500).json(err)
+        console.log(err);
+        res.status(500).json(err);
     })
   });
 
