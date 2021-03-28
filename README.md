@@ -13,8 +13,8 @@ Table of Contents |
 -------------------|
 [Installation](#Installation)
 [Usage](#Usage)
-[License](#License)
 [Screenshots](#Screenshots)
+[License](#License)
 [Contributing](#Contributing)
 [Authors](#Authors)
 [Questions](#Questions)
@@ -46,7 +46,7 @@ You can find the deployed link and the repository link below:
 
 Deployed Link: [Deployed on Heroku](https://rocky-dawn-18669.herokuapp.com/#)
 
-Video Walkthrough: [Video Link](https://drive.google.com/file/d/1iZtWIv-wLRS-2H9gLyqoH3NvAqzHFZ7K/view?usp=sharing)
+Video Walkthrough: [Video Link](https://drive.google.com/file/d/1eAxeo5jNlSgj4ZRVid00cdQkMwffEidJ/view?usp=sharing)
 
 Repo Link: [Repo Link](https://github.com/UTBootCampGroup2Project2/reward-bank)
 
