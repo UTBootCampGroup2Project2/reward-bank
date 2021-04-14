@@ -6,24 +6,36 @@ async function signupFormHandler(event) {
   const password = document.querySelector('#password-signup').value.trim();
 
   if (name && username && password) {
-    const response = await fetch('/api/users/child', {
-      method: 'post',
-      body: JSON.stringify({
-        name,
-        username,
-        password
-      }),
+    fetch(`/api/users/exist/${username}`, {
+      method: 'get',
       headers: { 'Content-Type': 'application/json' }
-    });
-    
-    // check the response status
-    if (response.ok) {
-      console.log('success');
-      document.location.replace('/dashboard');
-    } else {
-      console.log(response);
-      alert(response.statusText);
-    }
+    })
+      .then((response) => response.json())
+      .then(dbUserData => {
+
+        if (dbUserData.usernameIsAvailable) {
+          fetch('/api/users/child', {
+            method: 'post',
+            body: JSON.stringify({
+              name,
+              username,
+              password
+            }),
+            headers: { 'Content-Type': 'application/json' }
+          })
+            .then(response => {
+              // check the response status
+              if (response.ok) {
+                document.location.replace('/dashboard');
+              } else {
+                alert(response.statusText);
+              }
+            })
+        }
+        else {
+          alert("Username already exists!");
+        }
+      })
   }
 }
 

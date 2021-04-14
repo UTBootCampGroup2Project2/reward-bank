@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
     });
 });
 
-// GET one user
+// GET one user by id
 router.get('/:id', (req, res) => {
     User.findOne({
         attributes: { exclude: ['password']},
@@ -35,7 +35,28 @@ router.get('/:id', (req, res) => {
     });
 });
 
-
+// Check if username exists
+router.get('/exist/:username', (req, res) => {
+    
+    User.findOne({
+        attributes: { exclude: ['password']},
+        where: {
+            username: req.params.username
+        }
+    })
+    .then(dbUserData => {
+        if (!dbUserData) {
+            res.status(200).json({ usernameIsAvailable: true});
+        }
+        else{
+            res.status(200).json({ usernameIsAvailable: false});
+        }
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
 //GET all children of a parent
 router.get('/child/:parentId', (req, res) => {
