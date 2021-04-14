@@ -19,7 +19,6 @@ router.get('/:childID', (req, res) => {
 
     })
     .then(dbTaskHistoryData => {
-        console.log(dbTaskHistoryData)
         if (!dbTaskHistoryData) {
             res.status(404).json({ message: 'Sorry! No task history was found for this user.'});
             return;
